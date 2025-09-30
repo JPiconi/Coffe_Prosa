@@ -11,6 +11,19 @@ menuController.getAllMenuItems = (req, res) => {
     });
 };
 
+menuController.getMenuItemById = (req, res) => {
+    const { id } = req.params;
+    db.query('SELECT * FROM menu_items WHERE id = ?', [id], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database query failed' });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ error: 'Menu item not found' });
+        }
+        res.json(results[0]);
+    });
+};
+
 // Add a new menu item
 menuController.addMenuItem = (req, res) => {
     const { name, description, price, category } = req.body;
