@@ -1,9 +1,10 @@
-import { Router } from 'express';
-const router = Router();
+const express = require('express');
+const router = express.Router();
+const db = require('../db/connection.js');
 
 // Route to get all menu items for admin
 router.get('/menu', (req, res) => {
-    query('SELECT * FROM menu_items', (err, results) => {
+    db.query('SELECT * FROM menu_items', (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
@@ -14,7 +15,7 @@ router.get('/menu', (req, res) => {
 // Route to add a new menu item
 router.post('/menu', (req, res) => {
     const { name, description, price, category } = req.body;
-    query('INSERT INTO menu_items (name, description, price, category) VALUES (?, ?, ?, ?)', [name, description, price, category], (err, results) => {
+    db.query('INSERT INTO menu_items (name, description, price, category) VALUES (?, ?, ?, ?)', [name, description, price, category], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to add menu item' });
         }
@@ -26,7 +27,7 @@ router.post('/menu', (req, res) => {
 router.put('/menu/:id', (req, res) => {
     const { id } = req.params;
     const { name, description, price, category } = req.body;
-    query('UPDATE menu_items SET name = ?, description = ?, price = ?, category = ? WHERE id = ?', [name, description, price, category, id], (err, results) => {
+    db.query('UPDATE menu_items SET name = ?, description = ?, price = ?, category = ? WHERE id = ?', [name, description, price, category, id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to update menu item' });
         }
@@ -37,7 +38,7 @@ router.put('/menu/:id', (req, res) => {
 // Route to delete a menu item
 router.delete('/menu/:id', (req, res) => {
     const { id } = req.params;
-    query('DELETE FROM menu_items WHERE id = ?', [id], (err, results) => {
+    db.query('DELETE FROM menu_items WHERE id = ?', [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to delete menu item' });
         }
@@ -47,7 +48,7 @@ router.delete('/menu/:id', (req, res) => {
 
 // Route to get customer data
 router.get('/customers', (req, res) => {
-    query('SELECT * FROM customers', (err, results) => {
+    db.query('SELECT * FROM customers', (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
@@ -55,4 +56,4 @@ router.get('/customers', (req, res) => {
     });
 });
 
-export default router;
+module.exports = router;

@@ -49,4 +49,4 @@ const adminController = {
     }
 };
 
-export default adminController;
+module.exports = adminController;
