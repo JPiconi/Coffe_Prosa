@@ -1,6 +1,6 @@
 const registerForm = document.getElementById('registerForm');
 
-registerForm.addEventListener('submit', function(event) {
+registerForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const name = document.getElementById('name').value;
@@ -28,17 +28,17 @@ registerForm.addEventListener('submit', function(event) {
         },
         body: JSON.stringify(userData)
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Registration failed');
-        }
-        return response.json();
-    })
-    .then(data => {
-        alert(data.message);
-        window.location.href = 'login.html';
-    })
-    .catch(error => {
-        alert(error.message);
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Registration failed');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert(data.message);
+            window.location.href = 'login.html';
+        })
+        .catch(error => {
+            alert(error.message);
+        });
 });
