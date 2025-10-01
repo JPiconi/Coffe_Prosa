@@ -11,7 +11,6 @@
     <div class="container">
       <h1>Register</h1>
       <form id="registerForm">
-        <!-- Linha 1: Nome e Email -->
         <div class="form-row">
           <div class="form-group2">
             <label for="name">Name</label>
@@ -23,7 +22,6 @@
           </div>
         </div>
 
-        <!-- Linha 2: Senha e Confirmação -->
         <div class="form-row">
           <div class="form-group2">
             <label for="password">Senha</label>
@@ -39,14 +37,15 @@
             />
           </div>
         </div>
-
-        <!-- CPF centralizado -->
         <div class="form-group-cpf">
           <label for="cpf">CPF</label>
-          <input type="text" id="cpf" name="cpf" required />
+          <input type="text" id="cpf" name="cpf" maxlength="11" required />
         </div>
 
-        <button type="submit">Cadastre-se!</button>
+        <div>
+          <p class="msgError"></p>
+          <button type="submit">Cadastre-se!</button>
+        </div>
       </form>
       <p>Já tem uma conta? <a href="login.html">Faça Login!</a></p>
     </div>
