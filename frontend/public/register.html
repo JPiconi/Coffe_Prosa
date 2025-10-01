@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register - Café&Prosa</title>
     <link rel="stylesheet" href="../css/styles.css" />
-    <script src="../js/register.js"></script>
+    <script src="../js/register.js" defer></script>
   </head>
   <body>
     <div class="container">
       <h1>Register</h1>
       <form id="registerForm">
+        <!-- Linha 1: Nome e Email -->
         <div class="form-row">
           <div class="form-group2">
-            <label for="name">Name</label>
+            <label for="name">Nome</label>
             <input type="text" id="name" name="name" required />
           </div>
           <div class="form-group2">
@@ -22,6 +23,7 @@
           </div>
         </div>
 
+        <!-- Linha 2: Senha e Confirmar Senha -->
         <div class="form-row">
           <div class="form-group2">
             <label for="password">Senha</label>
@@ -38,6 +40,7 @@
           </div>
         </div>
 
+        <!-- Linha 3: CPF sozinho -->
         <div class="form-row">
           <div class="form-group2">
             <label for="cpf">CPF</label>

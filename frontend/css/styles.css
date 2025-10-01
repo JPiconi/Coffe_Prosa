@@ -377,6 +377,7 @@ form {
   font-family: inherit;
   transition: border 0.2s, box-shadow 0.2s;
 }
+
 .form-group2 input:focus {
   border: 1.5px solid var(--marrom-medio);
   box-shadow: 0 0 0 2px var(--dourado);
@@ -453,13 +454,14 @@ form {
   font-size: 0.9em;
 }
 
+/* Campos lado a lado no registro */
 .form-row {
   display: flex;
   gap: 20px; /* Espaço entre os campos */
-  flex-wrap: wrap; /* Quebra para baixo em telas pequenas */
+  flex-wrap: wrap; /* Quebra em telas pequenas */
 }
 
 .form-row .form-group2 {
   flex: 1; /* Divide o espaço igualmente */
-  min-width: 180px; /* Evita que fique muito estreito */
+  min-width: 180px; /* Evita campos estreitos demais */
 }
