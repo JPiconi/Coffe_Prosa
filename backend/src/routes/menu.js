@@ -1,20 +1,20 @@
-const express = require('express');
-const router = express.Router();
-const menuController = require('../controllers/menuController');
+import { Router } from 'express';
+const router = Router();
+import { getAllMenuItems, getMenuItemById, addMenuItem, updateMenuItem, deleteMenuItem } from '../controllers/menuController.js';
 
 // Route to get all menu items
-router.get('/', menuController.getAllMenuItems);
+router.get('/', getAllMenuItems);
 
 // Route to get a specific menu item by ID
-router.get('/:id', menuController.getMenuItemById);
+router.get('/:id', getMenuItemById);
 
 // Route to add a new menu item
-router.post('/', menuController.addMenuItem);
+router.post('/', addMenuItem);
 
 // Route to update an existing menu item
-router.put('/:id', menuController.updateMenuItem);
+router.put('/:id', updateMenuItem);
 
 // Route to delete a menu item
-router.delete('/:id', menuController.deleteMenuItem);
+router.delete('/:id', deleteMenuItem);
 
-module.exports = router;
+export default router;
