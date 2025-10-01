@@ -1,11 +1,11 @@
-const express = require('express');
-const router = express.Router();
-const db = require('../db/connection');
+import { Router } from 'express';
+const router = Router();
+import { query } from '../db/connection';
 
 // Route to get customer details by ID
 router.get('/customers/:id', (req, res) => {
     const { id } = req.params;
-    db.query('SELECT * FROM customers WHERE id = ?', [id], (err, results) => {
+    query('SELECT * FROM customers WHERE id = ?', [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
@@ -20,7 +20,7 @@ router.get('/customers/:id', (req, res) => {
 router.put('/customers/:id', (req, res) => {
     const { id } = req.params;
     const { name, email, cpf } = req.body;
-    db.query('UPDATE customers SET name = ?, email = ?, cpf = ? WHERE id = ?', [name, email, cpf, id], (err, results) => {
+    query('UPDATE customers SET name = ?, email = ?, cpf = ? WHERE id = ?', [name, email, cpf, id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to update customer details' });
         }
@@ -31,7 +31,7 @@ router.put('/customers/:id', (req, res) => {
 // Route to delete a customer account
 router.delete('/customers/:id', (req, res) => {
     const { id } = req.params;
-    db.query('DELETE FROM customers WHERE id = ?', [id], (err, results) => {
+    query('DELETE FROM customers WHERE id = ?', [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to delete customer account' });
         }
@@ -42,7 +42,7 @@ router.delete('/customers/:id', (req, res) => {
 // Route to get all orders for a customer
 router.get('/customers/:id/orders', (req, res) => {
     const { id } = req.params;
-    db.query('SELECT * FROM orders WHERE customer_id = ?', [id], (err, results) => {
+    query('SELECT * FROM orders WHERE customer_id = ?', [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
@@ -50,4 +50,4 @@ router.get('/customers/:id/orders', (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;

@@ -1,18 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const adminRoutes = require('./routes/adminDashboard');
-const authRoutes = require('./routes/auth');
-const customerRoutes = require('./routes/customerDashboard');
-const menuRoutes = require('./routes/menu');
+import express from 'express';
+import { json, urlencoded } from 'body-parser';
+import cors from 'cors';
+import adminRoutes from './routes/adminDashboard';
+import authRoutes from './routes/auth';
+import customerRoutes from './routes/customerDashboard';
+import menuRoutes from './routes/menu';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/admin', adminRoutes);

@@ -1,10 +1,10 @@
-const mysql = require('mysql');
+import { createConnection } from 'mysql';
 
-const db = mysql.createConnection({
+const db = createConnection({
     host: 'localhost',
-    user: 'root', 
-    password: '1234', 
-    database: 'cafe_prosa' 
+    user: 'root',
+    password: '1234',
+    database: 'cafe_prosa'
 });
 
 db.connect((err) => {
@@ -15,4 +15,4 @@ db.connect((err) => {
     console.log('Connected to database.');
 });
 
-module.exports = db;
+export default db;

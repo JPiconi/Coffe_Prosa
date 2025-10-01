@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/connection');
+const db = require('../db/connection').default;
 
 // Route to get customer orders
 router.get('/orders', (req, res) => {
-    const customerId = req.user.id; // Assuming user ID is stored in req.user
+    const customerId = req.user.id;
     db.query('SELECT * FROM orders WHERE customer_id = ?', [customerId], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
@@ -15,12 +15,12 @@ router.get('/orders', (req, res) => {
 
 // Route to get customer account details
 router.get('/login', (req, res) => {
-    const customerId = req.user.id; // Assuming user ID is stored in req.user
+    const customerId = req.user.id;
     db.query('SELECT * FROM customers WHERE id = ?', [customerId], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
-        res.json(results[0]); // Return the first result
+        res.json(results[0]);
     });
 });
 
