@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/connection').default;
+const db = require('../db/connection.js').default;
 
 // Route to get customer orders
 router.get('/orders', (req, res) => {

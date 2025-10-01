@@ -1,10 +1,10 @@
 import express from 'express';
 import { json, urlencoded } from 'body-parser';
 import cors from 'cors';
-import adminRoutes from './routes/adminDashboard';
-import authRoutes from './routes/auth';
-import customerRoutes from './routes/customerDashboard';
-import menuRoutes from './routes/menu';
+import adminRoutes from './routes/adminDashboard.js';
+import authRoutes from './routes/auth.js';
+import customerRoutes from './routes/customerDashboard.js';
+import menuRoutes from './routes/menu.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;

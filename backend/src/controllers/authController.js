@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { hash, compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
-import { query } from '../db/connection';
 
 const router = Router();
 

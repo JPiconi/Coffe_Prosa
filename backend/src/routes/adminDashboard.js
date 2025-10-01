@@ -1,6 +1,5 @@
 import { Router } from 'express';
 const router = Router();
-import { query } from '../db/connection';
 
 // Route to get all menu items for admin
 router.get('/menu', (req, res) => {

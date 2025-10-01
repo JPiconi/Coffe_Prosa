@@ -1,5 +1,4 @@
 const menuController = {};
-import { query } from '../db/connection';
 
 // Get all menu items
 menuController.getAllMenuItems = (req, res) => {
