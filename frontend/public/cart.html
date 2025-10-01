@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Café&Prosa - Shopping Cart</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/cart.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Café&Prosa</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="cart.html">Carrinho</a></li>
-                <li><a href="customer-dashboard.html">Dashboard</a></li>
-                <li><a href="logout.html">Sair</a></li>
-            </ul>
-        </nav>
+      <h1>Bem-Vindo ao Café&Prosa</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="cart.html" class="active">Carrinho</a></li>
+          <li><a href="customer-dashboard.html">Dashboard do Cliente</a></li>
+          <li><a href="payment.html">Pagamento</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <h2>Seu Carrinho!</h2>
-        <div id="cart-items">
-        </div>
-        <div id="cart-summary">
-            <h3>Sumário do Carrinho</h3>
-            <p>Total: <span id="total-price">$0.00</span></p>
-            <button id="checkout-button">Faça o Checkout!</button>
-        </div>
+      <h2>Seu Carrinho!</h2>
+      <div id="cart-items"></div>
+      <div id="cart-summary">
+        <h3>Sumário do Carrinho</h3>
+        <p>Total: <span id="total-price">$0.00</span></p>
+        <button id="checkout-button">Faça o Checkout!</button>
+      </div>
     </main>
     <footer>
-        <p>&copy; 2025 Café&Prosa. All rights reserved.</p>
+      <p>&copy; 2025 Café&Prosa. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
