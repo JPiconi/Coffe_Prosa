@@ -14,7 +14,7 @@ router.get('/orders', (req, res) => {
 });
 
 // Route to get customer account details
-router.get('/account', (req, res) => {
+router.get('/login', (req, res) => {
     const customerId = req.user.id; // Assuming user ID is stored in req.user
     db.query('SELECT * FROM customers WHERE id = ?', [customerId], (err, results) => {
         if (err) {
@@ -25,7 +25,7 @@ router.get('/account', (req, res) => {
 });
 
 // Route to update customer account details
-router.put('/account', (req, res) => {
+router.put('/login', (req, res) => {
     const customerId = req.user.id; // Assuming user ID is stored in req.user
     const { name, email } = req.body;
     db.query('UPDATE customers SET name = ?, email = ? WHERE id = ?', [name, email, customerId], (err, results) => {
