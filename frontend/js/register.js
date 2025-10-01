@@ -5,6 +5,7 @@ const nome = document.getElementById("name");
 const email = document.getElementById("email");
 const senha = document.getElementById("password");
 const confirmarSenha = document.getElementById("confirmPassword");
+const cpfInput = document.getElementById("cpf");
 const msgErrorElements = document.getElementsByClassName("msgError");
 
 /* ------ FUNÇÃO PARA RENDERIZAR AS DIFERENTES MENSAGENS DE ERRO! ------ */
@@ -77,6 +78,27 @@ function checkPasswordStrength(senha) {
 }
 /* --------------------------------------------------------------------- */
 
+/* ------------- FUNÇÃO DE MASCARA DE CPF ------------------ */
+
+cpfInput.addEventListener("input", function (e) {
+    let value = e.target.value;
+    value = value.replace(/\D/g, '');
+
+    if (value.length > 3) {
+        value = value.replace(/^(\d{3})(\d)/, '$1.$2');
+    }
+    if (value.length > 6) {
+        value = value.replace(/^(\d{3})\.(\d{3})(\d)/, '$1.$2.$3');
+    }
+    if (value.length > 9) {
+        value = value.replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, '$1.$2.$3-$4');
+    }
+
+    e.target.value = value.slice(0, 14); // garante no máximo 14 caracteres
+});
+
+
+
 /* ------------- FUNÇÃO PARA VERIFICAR E ENVIAR DADOS ------------------ */
 async function fetchDatas(event) {
     // Tornar a Função async para usar await
@@ -102,22 +124,7 @@ async function fetchDatas(event) {
         return;
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const cpfInput = document.getElementById("cpf");
 
-        if (cpfInput) {
-            cpfInput.addEventListener("input", () => {
-                let value = cpfInput.value.replace(/\D/g, "");
-                if (value.length > 11) value = value.slice(0, 11);
-
-                value = value.replace(/^(\d{3})(\d)/, "$1.$2");
-                value = value.replace(/^(\d{3})\.(\d{3})(\d)/, "$1.$2.$3");
-                value = value.replace(/\.(\d{3})(\d)/, ".$1-$2");
-
-                cpfInput.value = value;
-            });
-        }
-    });
 
     const senhaError = checkPasswordStrength(senha.value);
     if (senhaError) {
