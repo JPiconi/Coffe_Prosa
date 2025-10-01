@@ -1,6 +1,6 @@
 import { Router } from 'express';
 const router = Router();
-import { getAllMenuItems, getMenuItemById, addMenuItem, updateMenuItem, deleteMenuItem } from '../controllers/menuController';
+import { getAllMenuItems, getMenuItemById, addMenuItem, updateMenuItem, deleteMenuItem } from '../controllers/menuController.js';
 
 // Route to get all menu items
 router.get('/', getAllMenuItems);

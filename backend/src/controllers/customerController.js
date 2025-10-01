@@ -1,6 +1,5 @@
 import { Router } from 'express';
 const router = Router();
-import { query } from '../db/connection';
 
 // Route to get customer details by ID
 router.get('/customers/:id', (req, res) => {
