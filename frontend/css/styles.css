@@ -452,3 +452,14 @@ form {
   color: green;
   font-size: 0.9em;
 }
+
+.form-row {
+  display: flex;
+  gap: 20px; /* Espaço entre os campos */
+  flex-wrap: wrap; /* Quebra para baixo em telas pequenas */
+}
+
+.form-row .form-group2 {
+  flex: 1; /* Divide o espaço igualmente */
+  min-width: 180px; /* Evita que fique muito estreito */
+}
