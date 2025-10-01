@@ -1,8 +1,9 @@
 const menuController = {};
+const db = require('../db/connection.js');
 
 // Get all menu items
 menuController.getAllMenuItems = (req, res) => {
-    query('SELECT * FROM menu_items', (err, results) => {
+    db.query('SELECT * FROM menu_items', (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
@@ -12,7 +13,7 @@ menuController.getAllMenuItems = (req, res) => {
 
 menuController.getMenuItemById = (req, res) => {
     const { id } = req.params;
-    query('SELECT * FROM menu_items WHERE id = ?', [id], (err, results) => {
+    db.query('SELECT * FROM menu_items WHERE id = ?', [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
@@ -26,7 +27,7 @@ menuController.getMenuItemById = (req, res) => {
 // Add a new menu item
 menuController.addMenuItem = (req, res) => {
     const { name, description, price, category } = req.body;
-    query('INSERT INTO menu_items (name, description, price, category) VALUES (?, ?, ?, ?)', [name, description, price, category], (err, results) => {
+    db.query('INSERT INTO menu_items (name, description, price, category) VALUES (?, ?, ?, ?)', [name, description, price, category], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to add menu item' });
         }
@@ -38,7 +39,7 @@ menuController.addMenuItem = (req, res) => {
 menuController.updateMenuItem = (req, res) => {
     const { id } = req.params;
     const { name, description, price, category } = req.body;
-    query('UPDATE menu_items SET name = ?, description = ?, price = ?, category = ? WHERE id = ?', [name, description, price, category, id], (err, results) => {
+    db.query('UPDATE menu_items SET name = ?, description = ?, price = ?, category = ? WHERE id = ?', [name, description, price, category, id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to update menu item' });
         }
@@ -49,7 +50,7 @@ menuController.updateMenuItem = (req, res) => {
 // Delete a menu item
 menuController.deleteMenuItem = (req, res) => {
     const { id } = req.params;
-    query('DELETE FROM menu_items WHERE id = ?', [id], (err, results) => {
+    db.query('DELETE FROM menu_items WHERE id = ?', [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Failed to delete menu item' });
         }
@@ -57,4 +58,4 @@ menuController.deleteMenuItem = (req, res) => {
     });
 };
 
-export default menuController;
+module.exports = menuController;
