@@ -401,6 +401,47 @@ form {
   color: var(--marrom-escuro);
 }
 
+.success {
+    color: green;
+    font-size: 0.9em;
+}
+
+/* ========================= */
+/* Botão do Onboarding       */
+/* ========================= */
+.onboarding-btn {
+    background-color: #4E2E1E;
+    color: #C9A66B;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 14px rgba(78, 46, 30, 0.2);
+}
+
+
+.onboarding-actions {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.onboarding-actions a {
+     text-decoration: none;
+}
+
+.onboarding-actions .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
 .container p {
   margin-top: 18px;
   font-size: 1rem;
@@ -418,17 +459,17 @@ form {
 }
 
 .button {
-  background-color: #6f4c3e;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
+    background-color: #6f4c3e;
+    color: rgb(45, 8, 8);
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .button:hover {
