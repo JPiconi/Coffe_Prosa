@@ -24,15 +24,19 @@
 html,
 body {
   height: 100%;
-}
-
-body {
   background-color: #af8d71;
   color: var(--marrom-escuro);
   line-height: 1.6;
 
   display: flex;
   flex-direction: column;
+
+  background-image: url("/Img/novo.jpg"); /* caminho da imagem */
+  background-size: cover; /* cobre toda a tela */
+  background-repeat: no-repeat; /* não repete a imagem */
+  background-position: center; /* centraliza a imagem */
+
+  flex: 1;
 }
 
 /* Cabeçalho */
@@ -68,7 +72,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: var(--marrom-medio);
+  background-color: var(--marrom-claro);
 }
 
 nav ul li a.active {
@@ -77,15 +81,48 @@ nav ul li a.active {
 }
 
 /* Seção principal */
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  background-color: var(--bege);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  flex: 1;
+.Sobre {
+  width: 700px;
+  margin-top: 15px;
+  color: white;
+  padding: 100px;
+  margin-left: 50px;
+}
+
+.Sobre h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+  font-size: 50px;
+  text-shadow: 2px 2px 10px rgba(117, 117, 117, 0.7);
+}
+
+.Sobre p {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(117, 117, 117, 0.7);
+}
+
+.btn-cardapio {
+  font-family: "Playfair Display", serif;
+  font-size: medium;
+  height: 35px;
+  width: 125px;
+  background-color: var(--marrom-claro);
+  color: white;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.btn-cardapio2 {
+  font-family: "Playfair Display", serif;
+  font-size: medium;
+  height: 35px;
+  width: 125px;
+  background-color: var(--marrom-escuro);
+  color: white;
+  border-radius: 20px;
+  padding: 8px;
 }
 
 section h2 {
@@ -126,14 +163,4 @@ html {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  main {
-    margin: 1rem;
-    padding: 1.5rem;
-    flex: 1;
-  }
 }
