@@ -1,0 +1,139 @@
+/* ==============================
+   ESTILO PRINCIPAL - Café&Prosa
+   ============================== */
+
+:root {
+  --marrom-escuro: #4e2e1e;
+  --marrom-medio: #7c4f2c;
+  --marrom-claro: #bfa07a;
+  --bege: #e4dbca;
+  --dourado: #c9a66b;
+  --branco: #fff;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #af8d71;
+  color: var(--marrom-escuro);
+  line-height: 1.6;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--bege);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+
+.logo {
+  height: 100px;
+}
+
+/* Navegação */
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 40px;
+}
+
+nav ul li a {
+  color: #4e2e1e;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+nav ul li a:hover {
+  background-color: var(--marrom-medio);
+}
+
+nav ul li a.active {
+  color: var(--branco);
+  background-color: #3a2a21;
+}
+
+/* Seção principal */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: var(--bege);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  flex: 1;
+}
+
+section h2 {
+  color: var(--marrom-escuro);
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  font-size: 1rem;
+  color: #3a2a21;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--marrom-escuro);
+  color: var(--bege);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer nav a {
+  color: var(--dourado);
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+  color: var(--branco);
+}
+
+/* Animação suave ao rolar */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+    flex: 1;
+  }
+}

@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
 }
 
 :root {
@@ -35,7 +34,7 @@ header {
   color: var(--dourado);
   padding: 32px 0 16px 0;
   text-align: center;
-  border-bottom: 6px double var(--dourado);
+  border-bottom: solid var(--dourado);
   box-shadow: 0 4px 16px rgba(78, 46, 30, 0.15);
 }
 
@@ -562,6 +561,6 @@ nav ul li a {
 }
 
 nav ul li a.active {
-  background-color: var(--dourado);  
-  color: var(--marrom-escuro)
+  background-color: var(--dourado);
+  color: var(--marrom-escuro);
 }
