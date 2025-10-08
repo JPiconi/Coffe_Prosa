@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Café&Prosa ☕</title>
-    <link rel="stylesheet" href="/Novo_Css/index.css" />
+    <link rel="stylesheet" href="/Novo_Css/Menu.css" />
     <script src="../js/menu.js" defer></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
@@ -36,13 +36,86 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html" class="active">Cardápio</a></li>
           <li><a href="cart.html">Carrinho</a></li>
-          <li><a href="customer-dashboard.html">Painel do Cliente</a></li>
+          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
           <li><a href="payment.html">Pagamento</a></li>
         </ul>
       </nav>
     </header>
 
-    <main></main>
+    <main>
+      <div class="menu-container">
+        <div class="menu-nav">
+          <button data-target="mais-vendidos">Mais vendidos</button>
+          <button data-target="cafes-quentes">Cafés quentes</button>
+          <button data-target="cafes-gelados">Cafés gelados</button>
+          <button data-target="salgados">Salgados</button>
+        </div>
+
+        <div class="menu-section" id="mais-vendidos">
+          <h2>Mais Vendidos</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../img/espresso.jpg" alt="Espresso" />
+              <h3>Espresso Clássico</h3>
+              <p>R$ 7,00</p>
+            </div>
+            <div class="menu-item">
+              <img src="../img/cappuccino.jpg" alt="Cappuccino" />
+              <h3>Cappuccino Cremoso</h3>
+              <p>R$ 10,00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section" id="cafes-quentes">
+          <h2>Cafés Quentes</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../img/latte.jpg" alt="Latte" />
+              <h3>Café Latte</h3>
+              <p>R$ 9,00</p>
+            </div>
+            <div class="menu-item">
+              <img src="../img/mocha.jpg" alt="Mocha" />
+              <h3>Mocha Chocolate</h3>
+              <p>R$ 11,00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section" id="cafes-gelados">
+          <h2>Cafés Gelados</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../img/iced-latte.jpg" alt="Iced Latte" />
+              <h3>Iced Latte</h3>
+              <p>R$ 12,00</p>
+            </div>
+            <div class="menu-item">
+              <img src="../img/frappuccino.jpg" alt="Frappuccino" />
+              <h3>Frappuccino</h3>
+              <p>R$ 13,00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section" id="salgados">
+          <h2>Salgados</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="../img/pao-de-queijo.jpg" alt="Pão de Queijo" />
+              <h3>Pão de Queijo</h3>
+              <p>R$ 5,00</p>
+            </div>
+            <div class="menu-item">
+              <img src="../img/torta.jpg" alt="Torta" />
+              <h3>Torta de Frango</h3>
+              <p>R$ 8,00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer>
       <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
