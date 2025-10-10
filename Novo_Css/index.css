@@ -6,9 +6,11 @@
   --marrom-escuro: #4e2e1e;
   --marrom-medio: #7c4f2c;
   --marrom-claro: #bfa07a;
-  --bege: #e4dbca;
-  --dourado: #c9a66b;
-  --branco: #fff;
+
+  --Cream: #f3e9dc;
+  --Caramel: #c08552;
+  --Brownie: #5e3023;
+  --Coffee: #895737;
 }
 
 /* Reset básico */
@@ -23,7 +25,7 @@
 
 html,
 body {
-  height: 100%;
+  height: 1000px;
   background-color: #af8d71;
   color: var(--marrom-escuro);
   line-height: 1.6;
@@ -31,17 +33,22 @@ body {
   display: flex;
   flex-direction: column;
 
-  background-image: url("/Img/novo.jpg"); /* caminho da imagem */
-  background-size: cover; /* cobre toda a tela */
-  background-repeat: no-repeat; /* não repete a imagem */
-  background-position: center; /* centraliza a imagem */
+  background-image: url("/Img/novo.jpg");
+  /* caminho da imagem */
+  background-size: cover;
+  /* cobre toda a tela */
+  background-repeat: no-repeat;
+  /* não repete a imagem */
+  background-position: center;
+  /* centraliza a imagem */
 
   flex: 1;
+
 }
 
 /* Cabeçalho */
 header {
-  background-color: var(--bege);
+  background-color: var(--Cream);
   padding: 1.5rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
@@ -64,7 +71,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #4e2e1e;
+  color: var(--marrom-escuro);
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 0.3rem 0.6rem;
@@ -76,13 +83,12 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-  color: var(--branco);
-  background-color: #3a2a21;
+  color: var(--Cream);
+  background-color: var(--marrom-escuro);
 }
 
 main {
   flex: 1;
-  height: 70000px;
 }
 
 /* Seção principal */
@@ -97,7 +103,7 @@ main {
 }
 
 .Sobre h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 60px;
   text-shadow: 2px 2px 10px rgba(117, 117, 117, 0.7);
   margin-bottom: 1rem;
@@ -105,32 +111,32 @@ main {
 }
 
 .Sobre p {
-  font-family: "Playfair Display", serif;
-  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1.50rem;
   text-shadow: 2px 2px 10px rgba(117, 117, 117, 0.7);
 }
 
 .btn-cardapio {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: medium;
   height: 35px;
-  width: 125px;
-  background-color: var(--marrom-claro);
-  color: white;
+  width: 100px;
+  background-color: var(--Cream);
+  color: var(--marrom-escuro);
   border-radius: 20px;
-  padding: 8px;
+  padding: 10px;
 }
 
 .btn-cardapio2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: medium;
   height: 35px;
-  width: 125px;
+  width: 100px;
   background-color: var(--marrom-escuro);
-  color: white;
+  color: var(--Cream);
   border-radius: 20px;
-  padding: 8px;
-  margin-left: 0.3rem;
+  padding: 10px;
+  margin-left: 1rem;
 }
 
 section h2 {
@@ -148,19 +154,19 @@ section p {
 /* Rodapé */
 footer {
   background-color: var(--marrom-escuro);
-  color: var(--bege);
+  color: var(--Cream);
   text-align: center;
   padding: 1rem;
 }
 
 footer nav a {
-  color: var(--dourado);
+  color: var(--Caramel);
   margin: 0.1rem;
   transition: color 0.3s ease;
 }
 
 footer nav a:hover {
-  color: var(--branco);
+  color: var(--Cream);
 }
 
 /* Animação suave ao rolar */
@@ -169,5 +175,26 @@ html {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 768px) {}
+
+/* barra de rolagem */
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Largura da barra de rolagem */
+}
+
+/* Estilo do trilho da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: var(--Coffee);
+  /* Cor do trilho */
+  /* Bordas arredondadas */
+}
+
+/* Estilo do polegar (a parte que se move) */
+::-webkit-scrollbar-thumb {
+  background: var(--marrom-claro);
+  /* Cor do polegar */
+  border-radius: 10px;
+  /* Bordas arredondadas */
 }
