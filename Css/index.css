@@ -2,6 +2,7 @@
    ESTILO PRINCIPAL - Café&Prosa
    ============================== */
 
+/* Variáveis de cores */
 :root {
   --marrom-escuro: #4e2e1e;
   --marrom-medio: #7c4f2c;
@@ -23,6 +24,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Estrutura base */
 html,
 body {
   height: 1000px;
@@ -32,6 +34,7 @@ body {
 
   display: flex;
   flex-direction: column;
+  flex: 1;
 
   background-image: url("/Img/novo.jpg");
   /* caminho da imagem */
@@ -41,12 +44,11 @@ body {
   /* não repete a imagem */
   background-position: center;
   /* centraliza a imagem */
-
-  flex: 1;
-
 }
 
-/* Cabeçalho */
+/* ==============================
+   CABEÇALHO
+   ============================== */
 header {
   background-color: var(--Cream);
   padding: 1.5rem 2rem;
@@ -61,7 +63,9 @@ header {
   height: 100px;
 }
 
-/* Navegação */
+/* ==============================
+   NAVEGAÇÃO
+   ============================== */
 nav ul {
   display: flex;
   justify-content: center;
@@ -71,7 +75,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--marrom-escuro);
+  color: var(--Brownie);
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 0.3rem 0.6rem;
@@ -84,22 +88,24 @@ nav ul li a:hover {
 
 nav ul li a.active {
   color: var(--Cream);
-  background-color: var(--marrom-escuro);
+  background-color: var(--Brownie);
 }
 
+/* ==============================
+   CONTEÚDO PRINCIPAL
+   ============================== */
 main {
   flex: 1;
 }
 
-/* Seção principal */
-
+/* Sobre - seção especial */
 .Sobre {
   background-color: transparent;
   width: 700px;
   margin-top: 65px;
+  margin-left: 150px;
   color: white;
   padding: 100px;
-  margin-left: 150px;
 }
 
 .Sobre h2 {
@@ -107,15 +113,15 @@ main {
   font-size: 60px;
   text-shadow: 2px 2px 10px rgba(117, 117, 117, 0.7);
   margin-bottom: 1rem;
-
 }
 
 .Sobre p {
   font-family: "Poppins", sans-serif;
-  margin-bottom: 1.50rem;
+  margin-bottom: 1.5rem;
   text-shadow: 2px 2px 10px rgba(117, 117, 117, 0.7);
 }
 
+/* Botões de cardápio */
 .btn-cardapio {
   font-family: "Poppins", sans-serif;
   font-size: medium;
@@ -132,13 +138,14 @@ main {
   font-size: medium;
   height: 35px;
   width: 100px;
-  background-color: var(--marrom-escuro);
+  background-color: var(--Brownie);
   color: var(--Cream);
   border-radius: 20px;
   padding: 10px;
   margin-left: 1rem;
 }
 
+/* Títulos e textos das seções */
 section h2 {
   color: var(--marrom-escuro);
   font-family: "Playfair Display", serif;
@@ -151,12 +158,15 @@ section p {
   color: #3a2a21;
 }
 
-/* Rodapé */
+/* ==============================
+   RODAPÉ
+   ============================== */
 footer {
   background-color: var(--marrom-escuro);
   color: var(--Cream);
   text-align: center;
   padding: 1rem;
+  font-size: 0.9rem;
 }
 
 footer nav a {
@@ -169,29 +179,34 @@ footer nav a:hover {
   color: var(--Cream);
 }
 
-/* Animação suave ao rolar */
+/* ==============================
+   ANIMAÇÃO SUAVE AO ROLAR
+   ============================== */
 html {
   scroll-behavior: smooth;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {}
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+@media (max-width: 768px) {
+  /* Adicione estilos responsivos aqui, se necessário */
+}
 
-/* barra de rolagem */
-/* Estilo da barra de rolagem */
+/* ==============================
+   ESTILOS DA BARRA DE ROLAGEM
+   ============================== */
 ::-webkit-scrollbar {
   width: 12px;
   /* Largura da barra de rolagem */
 }
 
-/* Estilo do trilho da barra de rolagem */
 ::-webkit-scrollbar-track {
   background: var(--Coffee);
   /* Cor do trilho */
-  /* Bordas arredondadas */
+  /* Bordas arredondadas podem ser adicionadas aqui, se desejar */
 }
 
-/* Estilo do polegar (a parte que se move) */
 ::-webkit-scrollbar-thumb {
   background: var(--marrom-claro);
   /* Cor do polegar */
