@@ -138,14 +138,6 @@ async function fetchDatas(event) {
         return;
     }
 
-    // Validação do celular (opcional, já que a máscara tenta corrigir)
-    const celularLimpo = celular.value.replace(/\D/g, "");
-    if (celular.value && (celularLimpo.length < 10 || celularLimpo.length > 11)) {
-        createDisplayMsgError("O número de celular parece inválido.");
-        celular.focus();
-        return;
-    }
-
     const formData = {
         // `username`: Representa o nome de usuário inserido pelo usuário
         // `.trim()` é usado para remover quaisquer espaços em branco extras.
@@ -161,10 +153,6 @@ async function fetchDatas(event) {
         //Importante: A senha não deve ser "Trimmed" (não se deve usar .trim())
         //porque espaços no ínicio ou no fim podem ser intencionais e parte da senha escolhida
         password: senha.value,
-
-        //`celular`: Guarda o número de celular do usuário.
-        //`celularLimpo` é uma variável que  já contém o número de celular que contem apenas numeros
-        celular: celularLimpo,
 
         //replace(/\D/d, "") usado para remover todos os carcteres que não são digitos
         cpf: cpf.value.replace(/\D/g, ""),
