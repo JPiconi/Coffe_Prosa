@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
-    <title>Café&Prosa</title>
-    <link rel="stylesheet" href="/Css/style.css" />
-    <script src="../js/payment.js"></script>
+    <title>Café&Prosa ☕</title>
+    <link rel="stylesheet" href="../css/index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
@@ -26,7 +24,7 @@
     <header>
       <a href="index.html" class="logo">
         <img
-          src="/Img/Texto do seu parágrafo (2)-Photoroom.png"
+          src="../img/Texto do seu parágrafo (2)-Photoroom.png"
           alt="Logo Café&Prosa"
           class="logo"
         />
@@ -34,41 +32,38 @@
 
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="menu.html">Cardápio</a></li>
           <li><a href="cart.html">Carrinho</a></li>
-          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
-          <li><a href="payment.html" class="active">Pagamento</a></li>
+          <li><a href="customer-dashboard.html">Painel do Cliente</a></li>
+          <li><a href="payment.html">Pagamento</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="container">
-      <div>
-        <h1>Payment</h1>
-        <form id="payment-form">
-          <div class="form-group">
-            <label for="total-price">Total Price:</label>
-            <input type="text" id="total-price" name="total-price" readonly />
-          </div>
-          <div class="form-group">
-            <label for="payment-method">Método de Pagamento:</label>
-            <select id="payment-method" name="payment-method" required>
-              <option value="">Selecione a forma de pagamento:</option>
-              <option value="credit-card">Cartão de Crédito</option>
-              <option value="bank-transfer">Cartão de Débito</option>
-              <option value="paypal">Pix</option>
-            </select>
-          </div>
-          <button type="submit">Pagar</button>
-        </form>
-        <div id="payment-message"></div>
-      </div>
+    <main>
+      <section>
+        <h2>Sabores que Contam Histórias</h2>
+        <p>
+          No <strong>Café&Prosa</strong>, cada xícara é um convite à pausa, à
+          conversa e ao sabor. Aqui, o aroma do café fresco se mistura ao som de
+          boas risadas e momentos únicos. ☕✨
+        </p>
+        <p>
+          Explore o nosso cardápio repleto de cafés especiais, bebidas geladas,
+          e lanches preparados com carinho. De clássicos expressos até receitas
+          autorais, temos o sabor certo para cada momento do seu dia.
+        </p>
+        <br />
+        <a href="menu.html" class="botao">Ver Cardápio</a>
+      </section>
     </main>
+
     <footer>
       <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
       <nav>
         <a href="about.html">Sobre Nós</a> |
+        <a href="contact.html">Contato</a> |
         <a href="privacy.html">Política de Privacidade</a>
       </nav>
     </footer>

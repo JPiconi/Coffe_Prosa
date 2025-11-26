@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
     <title>Café&Prosa</title>
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="/Css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="../js/onboarding.js" defer></script>
     <script src="../js/login.js" defer></script>
     <script src="../js/register.js" defer></script>
@@ -15,34 +21,63 @@
     <script src="../js/customer-dashboard.js" defer></script>
     <script src="../js/admin-dashboard.js" defer></script>
   </head>
+
   <body>
     <header>
-      <h1>Bem-Vindo ao Café&Prosa</h1>
+      <a href="index.html" class="logo">
+        <img
+          src="/Img/Texto do seu parágrafo (2)-Photoroom.png"
+          alt="Logo Café&Prosa"
+          class="logo"
+        />
+      </a>
+
       <nav>
         <ul>
-          <li><a href="onboarding.html">Onboarding</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="customer-dashboard.html">Dashboard do Cliente</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="menu.html">Cardápio</a></li>
+          <li><a href="cart.html">Carrinho</a></li>
+          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
           <li><a href="payment.html">Pagamento</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
-      <section>
-        <h2>Descubra Gostosuras em nossa Cafeteria!</h2>
-        <p>
-          Na nossa Cafeteria Cafe & Prosa, Nós oferecemos Uma experiência
-          deliciosa com uma variedade de bebidas geladas e quentes, além de
-          lanches saudaveis!. <br />
-          Junte-se a nós para saborear o melhor do nosso cardápio!
-        </p>
-      </section>
+      <div class="Sobre">
+        <p>teste</p>
+        <i>
+          <h2>
+            O melhor Café <br />
+            da cidade
+          </h2></i
+        >
+
+        <i>
+          <p>
+            No Café&Prosa, cada xícara conta uma história. Um espaço acolhedor
+            para quem busca bons cafés, boas conversas e momentos de pausa no
+            dia. Da torra especial ao aconchego no atendimento, somos
+            apaixonados por criar experiências que aquecem o coração e despertam
+            os sentidos.
+          </p></i
+        >
+
+        <div class="Botoes">
+          <a href="menu.html" class="btn-cardapio">Ver Cardápio</a>
+
+          <a href="menu.html" class="btn-cardapio2">Sobre</a>
+        </div>
+      </div>
     </main>
+
     <footer>
-      <p>&copy; 2025 Café&Prosa. All rights reserved.</p>
+      <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
+      <nav>
+        <a href="about.html">Sobre Nós</a> |
+        <a href="contact.html">Contato</a> |
+        <a href="privacy.html">Política de Privacidade</a>
+      </nav>
     </footer>
   </body>
 </html>

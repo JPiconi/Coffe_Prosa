@@ -10,10 +10,10 @@ const menuRoutes = require('./routes/menu');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(urlencoded({ extended: true }));
+// // Middleware
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/admin', adminRoutes);

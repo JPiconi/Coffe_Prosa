@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
 }
 
 :root {
@@ -26,6 +25,8 @@ body {
   padding: 0;
   min-height: 100vh;
   letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
 
   display: flex;
   flex-direction: column;
@@ -36,7 +37,7 @@ header {
   color: var(--dourado);
   padding: 32px 0 16px 0;
   text-align: center;
-  border-bottom: 6px double var(--dourado);
+  border-bottom: solid var(--dourado);
   box-shadow: 0 4px 16px rgba(78, 46, 30, 0.15);
 }
 

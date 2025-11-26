@@ -1,36 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café&Prosa Menu</title>
-    <link rel="stylesheet" href="../css/styles.css">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
+    <title>Café&Prosa</title>
+    <link rel="stylesheet" href="/Css/Menu.css" />
     <script src="../js/menu.js" defer></script>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../js/onboarding.js" defer></script>
+    <script src="../js/login.js" defer></script>
+    <script src="../js/register.js" defer></script>
+    <script src="../js/password-recovery.js" defer></script>
+    <script src="../js/menu.js" defer></script>
+    <script src="../js/cart.js" defer></script>
+    <script src="../js/payment.js" defer></script>
+    <script src="../js/customer-dashboard.js" defer></script>
+    <script src="../js/admin-dashboard.js" defer></script>
+  </head>
+
+  <body>
     <header>
-        <h1>Welcome to Café&Prosa</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
-        </nav>
+      <a href="index.html" class="logo">
+        <img
+          src="/Img/Texto do seu parágrafo (2)-Photoroom.png"
+          alt="Logo Café&Prosa"
+          class="logo"
+        />
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Cardápio</a></li>
+          <li><a href="cart.html">Carrinho</a></li>
+          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
+          <li><a href="payment.html">Pagamento</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <h2>Our Menu</h2>
-        <div id="menu-categories">
+      <div class="menu-container">
+        <div class="menu-nav">
+          <button data-target="mais-vendidos">Mais vendidos</button>
+          <button data-target="cafes-quentes">Cafés quentes</button>
+          <button data-target="cafes-gelados">Cafés gelados</button>
+          <button data-target="salgados">Salgados</button>
         </div>
-        <div id="menu-items">
+
+        <div class="menu-section" id="mais-vendidos">
+          <h2>Mais Vendidos</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <a href="/Expresso_Classico.html">
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
+                  alt="Espresso"
+                  class="oi"
+              /></a>
+
+              <h3>Espresso Clássico</h3>
+              <p>R$ 7,00</p>
+            </div>
+            <div class="menu-item">
+              <a href="/Expresso_Classico.html">
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
+                  alt="Espresso"
+                  class="oi"
+              /></a>
+
+              <h3>Espresso Clássico</h3>
+              <p>R$ 7,00</p>
+            </div>
+            <div class="menu-item">
+              <a href="/Expresso_Classico.html">
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
+                  alt="Espresso"
+                  class="oi"
+              /></a>
+
+              <h3>Espresso Clássico</h3>
+              <p>R$ 7,00</p>
+            </div>
+
+            <div class="menu-item">
+              <img
+                src=" https://png.pngtree.com/png-clipart/20250417/original/pngtree-a-creamy-cup-of-cappuccino-topped-with-frothy-milk-and-cocoa-png-image_20847621.png"
+                alt="Cappuccino"
+              />
+              <h3>Cappuccino Cremoso</h3>
+              <p>R$ 10,00</p>
+            </div>
+          </div>
         </div>
+
+        <div class="menu-section" id="cafes-quentes">
+          <h2>Cafés Quentes</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
+                alt="Latte"
+              />
+              <h3>Café Latte</h3>
+              <p>R$ 9,00</p>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://www.nescafe.com/br/sites/default/files/2023-08/Nes_Web3_Article_Header_Mocha_1448x1240.png"
+                alt="Mocha"
+              />
+              <h3>Mocha Chocolate</h3>
+              <p>R$ 11,00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section" id="cafes-gelados">
+          <h2>Cafés Gelados</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="/Img/image-removebg-preview.png"
+                alt="Iced Latte"
+                style="height: 200px"
+              />
+              <h3>Iced Latte</h3>
+              <p>R$ 12,00</p>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://png.pngtree.com/png-vector/20241225/ourmid/pngtree-3d-frappuccino-with-whipped-cream-and-chocolate-png-image_14852301.png"
+                alt="Frappuccino"
+                style="height: 200px"
+              />
+              <h3>Frappuccino</h3>
+              <p>R$ 13,00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section" id="salgados">
+          <h2>Salgados</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <img
+                src="https://png.pngtree.com/png-clipart/20240327/original/pngtree-cheese-bread-brazilian-snack-pao-de-queijo-png-image_14691916.png"
+                alt="Pão de Queijo"
+              />
+              <h3>Pão de Queijo</h3>
+              <p>R$ 5,00</p>
+            </div>
+            <div class="menu-item">
+              <img src="/Img/download.png" alt="Torta" />
+              <h3>Torta de Frango</h3>
+              <p>R$ 8,00</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Café&Prosa. All rights reserved.</p>
+      <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
+      <nav>
+        <a href="about.html">Sobre Nós</a> |
+        <a href="contact.html">Contato</a> |
+        <a href="privacy.html">Política de Privacidade</a>
+      </nav>
     </footer>
-</body>
+  </body>
 </html>
