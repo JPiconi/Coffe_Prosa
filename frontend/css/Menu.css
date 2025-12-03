@@ -98,11 +98,14 @@ nav ul li a.active {
    MENU - NAVEGAÇÃO INTERNA
 ============================== */
 .menu-nav {
-  width: auto;
+  width: 100%;
   display: flex;
   gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+
   margin-bottom: 1.5rem;
 
   position: sticky;
@@ -112,10 +115,28 @@ nav ul li a.active {
   background-color: var(--Cream);
   border: 1.5px groove var(--Caramel);
   padding: 0.8rem;
-  border-radius: 12px;
+  border-radius: 10px;
+
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--Brownie) transparent;
+}
+
+/* Estilo do scroll para Chrome, Edge, etc */
+.menu-nav::-webkit-scrollbar {
+  height: 8px;
+}
+
+.menu-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menu-nav::-webkit-scrollbar-thumb {
+  background-color: var(--Brownie);
+  border-radius: 10px;
 }
 
 .menu-nav button {
+  flex: 0 0 auto; /* 🔥 botão não cresce, não quebra linha */
   background-color: var(--Brownie);
   color: var(--Cream);
   border: none;
@@ -124,6 +145,7 @@ nav ul li a.active {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .menu-nav button:hover {
