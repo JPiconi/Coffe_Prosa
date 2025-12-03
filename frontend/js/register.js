@@ -1,5 +1,14 @@
 console.log("JS CONECTADO!");
 
+<<<<<<< HEAD
+const name = document.getElementById('nome').value;
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+const confirmPassword = document.getElementById('confirmPassword').value;
+const cpf = document.getElementById('cpf').value;
+const birthday = document.getElementById('birthday').value;
+
+=======
 const formulario = document.getElementById("registerForm");
 const nome = document.getElementById("name");
 const email = document.getElementById("email");
@@ -9,22 +18,19 @@ const cpfInput = document.getElementById("cpf");
 const msgErrorElements = document.getElementsByClassName("msgError");
 
 /* ------ FUNÇÃO PARA RENDERIZAR AS DIFERENTES MENSAGENS DE ERRO! ------ */
+>>>>>>> 342ffbc707fff7c6bbe1abf63e0dc21cd2b30a37
 const createDisplayMsgError = (mensagem) => {
     if (msgErrorElements.length > 0) {
         msgErrorElements[0].textContent = mensagem;
         msgErrorElements[0].style.display = mensagem ? "block" : "none";
     }
 };
-/* --------------------------------------------------------------------- */
 
-/* ---------------- FUNÇÃO PARA VERIFICAR O NOME ----------------------- */
 const checkNome = () => {
     const nomeRegex = /^[A-Za-zÀ-ÿ\s'-]+$/;
     return nomeRegex.test(nome.value.trim());
 };
-/* --------------------------------------------------------------------- */
 
-/* ---------- FUNÇÃO PARA VERIFICAR O EMAIL --------------------- */
 const checkEmail = (emailValue) => {
     const emailTrimmed = emailValue.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,17 +54,19 @@ const checkEmail = (emailValue) => {
     }
     return false;
 };
-/* --------------------------------------------------------------------- */
 
-/* ---------- FUNÇÃO PARA VERIFICAR IGUALDADE DAS SENHAS --------------- */
 function checkPasswordMatch() {
     return senha.value === confirmarSenha.value ? true : false;
 }
-/* --------------------------------------------------------------------- */
 
+<<<<<<< HEAD
+function checkPasswordStrength(password) {
+    if (!/[a-z]/.test(password)) {
+=======
 /* ------------- FUNÇÃO PARA VERIFICAR FORÇA DA SENHA ------------------ */
 function checkPasswordStrength(senha) {
     if (!/[a-z]/.test(senha)) {
+>>>>>>> 342ffbc707fff7c6bbe1abf63e0dc21cd2b30a37
         return "A senha deve ter pelo menos uma letra minúscula!";
     }
     if (!/[A-Z]/.test(senha)) {
@@ -76,9 +84,7 @@ function checkPasswordStrength(senha) {
 
     return null;
 }
-/* --------------------------------------------------------------------- */
 
-/* ------------- FUNÇÃO DE MASCARA DE CPF ------------------ */
 
 cpfInput.addEventListener("input", function (e) {
     let value = e.target.value;
@@ -97,9 +103,6 @@ cpfInput.addEventListener("input", function (e) {
     e.target.value = value.slice(0, 14); // garante no máximo 14 caracteres
 });
 
-
-
-/* ------------- FUNÇÃO PARA VERIFICAR E ENVIAR DADOS ------------------ */
 async function fetchDatas(event) {
     // Tornar a Função async para usar await
     event.preventDefault();
@@ -139,15 +142,11 @@ async function fetchDatas(event) {
     }
 
     const formData = {
-        // `username`: Representa o nome de usuário inserido pelo usuário
-        // `.trim()` é usado para remover quaisquer espaços em branco extras.
-        // do início ou do fim da string do nome do usuário
         username: nome.value.trim(),
-
-        // `email`: Armazena o endereço de e-mail fornecido
-        // `.trim()` é usado para remover quaisquer espaços em branco extras.
-        // desnecessários, garantindo que o e-mail seja processado corretamente.
         email: email.value.trim(),
+<<<<<<< HEAD
+        password: password.value,
+=======
 
         //`password`: Contém a senha digitada pelo usuário.
         //Importante: A senha não deve ser "Trimmed" (não se deve usar .trim())
@@ -155,13 +154,12 @@ async function fetchDatas(event) {
         password: senha.value,
 
         //replace(/\D/d, "") usado para remover todos os carcteres que não são digitos
+>>>>>>> 342ffbc707fff7c6bbe1abf63e0dc21cd2b30a37
         cpf: cpf.value.replace(/\D/g, ""),
 
     };
 
     console.log("Dados a serem enviados: ", JSON.stringify(formData, null, 2));
-
-    // ---- INÍCIO DA LÓGICA DE ENVIO ----
     try {
         const response = await fetch("/register", {
             method: "POST", //método HTTP 200
@@ -189,9 +187,7 @@ async function fetchDatas(event) {
         console.error("Erro na requisição: ", error);
         createDisplayMsgError("Erro de conexão. Por Favor, tente novamente");
     }
-    // ---FIM DA LÓGICA DE ENVIO ---
 }
-/* --------------------------------------------------------------------- */
 
 formulario.addEventListener("submit", fetchDatas);
 
