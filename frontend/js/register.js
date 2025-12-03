@@ -236,3 +236,31 @@ function checkPasswordStrength(senha) {
 
     return null;
 }
+
+function validarDataAniversario(birthday) {
+    // 1. Criar objetos Date para a data de nascimento e a data atual
+    const dataAtual = new Date();
+    const dataNascimento = new Date(birthday); // Espera-se o formato YYYY-MM-DD para compatibilidade
+
+    // 2. Verificar se a data é válida (isNaN)
+    // Uma data inválida em JS resulta em um objeto Date cujo getTime() é NaN
+    if (isNaN(dataNascimento.getTime())) {
+        return "Data inválida.";
+    }
+
+    // 3. Verificar se a data não é futura
+    if (dataNascimento > dataAtual) {
+        return "A data de nascimento não pode ser no futuro.";
+    }
+
+    // 4. (Opcional) Verificar idade mínima (exemplo: 18 anos)
+    const idadeMinima = 18;
+    const dataMinimaNascimento = new Date();
+    // Define a data mínima de nascimento (hoje - 18 anos)
+    dataMinimaNascimento.setFullYear(dataAtual.getFullYear() - idadeMinima);
+
+    if (dataNascimento > dataMinimaNascimento) {
+        return "Você deve ter pelo menos " + idadeMinima + " anos de idade.";
+    }
+    return "Data de nascimento válida.";
+}
