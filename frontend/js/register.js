@@ -1,59 +1,24 @@
 console.log("JS CONECTADO!");
 
-document.getElementById('userForm').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Impede o envio padrão do formulário
+const name = document.getElementById('nome').value;
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+const confirmPassword = document.getElementById('confirmPassword').value;
+const cpf = document.getElementById('cpf').value;
+const birthday = document.getElementById('birthday').value;
 
-    // Captura os dados do formulário
-    const name = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    const cpf = document.getElementById('cpf').value;
-    const birthday = document.getElementById('birthday').value;
-
-    // Cria o objeto com os dados do usuário
-    const userData = { name, email, password, cpf, birthday };
-
-    try {
-        // Faz a requisição POST para o backend
-        const response = await fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData),
-        });
-
-        if (response.ok) {
-            const message = await response.text();
-            alert(message);
-        } else {
-            const error = await response.text();
-            alert(`Erro: ${error}`);
-        }
-    } catch (error) {
-        console.error('Erro ao enviar os dados:', error);
-        alert('Erro ao conectar com o servidor.');
-    }
-});
-
-/* ------ FUNÇÃO PARA RENDERIZAR AS DIFERENTES MENSAGENS DE ERRO! ------ */
 const createDisplayMsgError = (mensagem) => {
     if (msgErrorElements.length > 0) {
         msgErrorElements[0].textContent = mensagem;
         msgErrorElements[0].style.display = mensagem ? "block" : "none";
     }
 };
-/* --------------------------------------------------------------------- */
 
-/* ---------------- FUNÇÃO PARA VERIFICAR O NOME ----------------------- */
 const checkNome = () => {
     const nomeRegex = /^[A-Za-zÀ-ÿ\s'-]+$/;
     return nomeRegex.test(nome.value.trim());
 };
-/* --------------------------------------------------------------------- */
 
-/* ---------- FUNÇÃO PARA VERIFICAR O EMAIL --------------------- */
 const checkEmail = (emailValue) => {
     const emailTrimmed = emailValue.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -77,15 +42,11 @@ const checkEmail = (emailValue) => {
     }
     return false;
 };
-/* --------------------------------------------------------------------- */
 
-/* ---------- FUNÇÃO PARA VERIFICAR IGUALDADE DAS SENHAS --------------- */
 function checkPasswordMatch() {
     return password.value === confirmPassword.value ? true : false;
 }
-/* --------------------------------------------------------------------- */
 
-/* ------------- FUNÇÃO PARA VERIFICAR FORÇA DA SENHA ------------------ */
 function checkPasswordStrength(password) {
     if (!/[a-z]/.test(password)) {
         return "A senha deve ter pelo menos uma letra minúscula!";
@@ -105,9 +66,7 @@ function checkPasswordStrength(password) {
 
     return null;
 }
-/* --------------------------------------------------------------------- */
 
-/* ------------- FUNÇÃO DE MASCARA DE CPF ------------------ */
 
 cpfInput.addEventListener("input", function (e) {
     let value = e.target.value;
@@ -126,9 +85,6 @@ cpfInput.addEventListener("input", function (e) {
     e.target.value = value.slice(0, 14); // garante no máximo 14 caracteres
 });
 
-
-
-/* ------------- FUNÇÃO PARA VERIFICAR E ENVIAR DADOS ------------------ */
 async function fetchDatas(event) {
     // Tornar a Função async para usar await
     event.preventDefault();
@@ -168,29 +124,14 @@ async function fetchDatas(event) {
     }
 
     const formData = {
-        // `username`: Representa o nome de usuário inserido pelo usuário
-        // `.trim()` é usado para remover quaisquer espaços em branco extras.
-        // do início ou do fim da string do nome do usuário
         username: nome.value.trim(),
-
-        // `email`: Armazena o endereço de e-mail fornecido
-        // `.trim()` é usado para remover quaisquer espaços em branco extras.
-        // desnecessários, garantindo que o e-mail seja processado corretamente.
         email: email.value.trim(),
-
-        //`password`: Contém a senha digitada pelo usuário.
-        //Importante: A senha não deve ser "Trimmed" (não se deve usar .trim())
-        //porque espaços no ínicio ou no fim podem ser intencionais e parte da senha escolhida
         password: password.value,
-
-        //replace(/\D/d, "") usado para remover todos os carcteres que não são digitos
         cpf: cpf.value.replace(/\D/g, ""),
 
     };
 
     console.log("Dados a serem enviados: ", JSON.stringify(formData, null, 2));
-
-    // ---- INÍCIO DA LÓGICA DE ENVIO ----
     try {
         const response = await fetch("/register", {
             method: "POST", //método HTTP 200
@@ -218,9 +159,7 @@ async function fetchDatas(event) {
         console.error("Erro na requisição: ", error);
         createDisplayMsgError("Erro de conexão. Por Favor, tente novamente");
     }
-    // ---FIM DA LÓGICA DE ENVIO ---
 }
-/* --------------------------------------------------------------------- */
 
 formulario.addEventListener("submit", fetchDatas);
 
