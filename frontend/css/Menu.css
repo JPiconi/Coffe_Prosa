@@ -1,262 +1,271 @@
-/* Menu.css - Estilos para o Cardápio Café&Prosa */
-
-/* Variáveis de tema */
+/* ==============================
+   VARIÁVEIS DE CORES
+============================== */
 :root {
   --marrom-escuro: #4e2e1e;
   --marrom-medio: #7c4f2c;
   --marrom-claro: #bfa07a;
+
   --Bege: #e4dbca;
+
   --Cream: #f3e9dc;
   --Caramel: #c08552;
   --Brownie: #5e3023;
-  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  --radius: 12px;
-  --max-width: 1100px;
-  --gap: 1rem;
+  --Coffee: #895737;
 }
 
-/* Reset simples */
+/* ==============================
+   RESET BÁSICO
+============================== */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
 }
+
 html,
 body {
   height: 100%;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: var(--marrom-claro);
-  color: var(--marrom-escuro);
-}
-a {
-  color: inherit;
+  scroll-behavior: smooth;
 }
 
-/* Header */
-.site-header {
-  background: var(--Bege);
-  padding: 1rem 1.5rem;
+body {
+  background-color: var(--marrom-claro);
+  color: var(--marrom-escuro);
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+header {
+  background-color: var(--Bege);
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
   display: flex;
-  align-items: center;
-  gap: 20px;
   justify-content: center;
-  box-shadow: var(--shadow);
+  gap: 150px;
 }
-.logo-img {
-  height: 80px;
+
+.logo {
+  height: 100px;
 }
-.main-nav ul {
+
+/* ==============================
+   NAVEGAÇÃO PRINCIPAL
+============================== */
+nav ul {
   display: flex;
-  gap: 1.25rem;
+  justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  gap: 1.5rem;
+  margin-top: 40px;
 }
-.main-nav a {
-  padding: 6px 10px;
+
+nav ul li a {
+  color: var(--marrom-escuro);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0.6rem;
   border-radius: 6px;
 }
-.main-nav a.active {
-  background: var(--Brownie);
+
+nav ul li a:hover {
+  background-color: var(--marrom-claro);
+}
+
+nav ul li a.active {
   color: var(--Cream);
+  background-color: var(--Brownie);
 }
 
-/* Container central */
+/* ==============================
+   MENU - CONTAINER PRINCIPAL
+============================== */
 .menu-container {
-  max-width: var(--max-width);
+  max-width: 900px;
   margin: 2rem auto;
-  background: var(--Cream);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  box-shadow: var(--shadow);
+  background-color: var(--Cream);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header do cardápio */
-.menu-header {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.menu-header h1 {
-  font-family: "Playfair Display", serif;
-  color: var(--marrom-escuro);
-  font-size: 1.9rem;
-}
-.menu-subtitle {
-  color: #3a2126;
-  margin-top: 0.4rem;
-}
-
-/* Controls (search + filters) */
-.controls-row {
+/* ==============================
+   MENU - NAVEGAÇÃO INTERNA
+============================== */
+.menu-nav {
+  width: 100%;
   display: flex;
   gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-.search-bar {
-  flex: 1;
-  min-width: 220px;
-  display: flex;
-  justify-content: flex-start;
-}
-.search-bar input {
-  width: 100%;
-  max-width: 520px;
-  padding: 10px 14px;
+
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+
+  margin-bottom: 1.5rem;
+
+  position: sticky;
+  top: 15px;
+  z-index: 10;
+
+  background-color: var(--Cream);
+  border: 1.5px groove var(--Caramel);
+  padding: 0.8rem;
   border-radius: 10px;
-  border: 2px solid var(--Caramel);
-  outline: none;
-  font-size: 1rem;
-}
-.search-bar input:focus {
-  border-color: var(--Brownie);
-  background: var(--Bege);
-}
-.filter-controls {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-.filter-controls label {
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--Brownie) transparent;
 }
 
-/* Nav interna (categorias) */
-.menu-nav {
-  display: flex;
-  gap: 0.75rem;
-  overflow-x: auto;
-  padding: 0.6rem;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.6),
-    rgba(243, 233, 220, 0.6)
-  );
-  border: 1px solid rgba(0, 0, 0, 0.06);
+/* Estilo do scroll para Chrome, Edge, etc */
+.menu-nav::-webkit-scrollbar {
+  height: 8px;
 }
-.menu-nav .nav-btn {
-  flex: 0 0 auto;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: var(--Brownie);
+
+.menu-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menu-nav::-webkit-scrollbar-thumb {
+  background-color: var(--Brownie);
+  border-radius: 10px;
+}
+
+.menu-nav button {
+  flex: 0 0 auto; /* 🔥 botão não cresce, não quebra linha */
+  background-color: var(--Brownie);
   color: var(--Cream);
   border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
-.menu-nav .nav-btn:hover {
-  transform: translateY(-2px);
-}
-.menu-nav .nav-btn.active {
-  background: var(--Caramel);
+
+.menu-nav button:hover {
+  background-color: var(--marrom-claro);
   color: var(--Brownie);
 }
 
-/* Seções */
+/* ==============================
+   SEÇÕES DO MENU
+============================== */
 .menu-section {
-  margin-bottom: 2rem;
-  scroll-margin-top: 120px;
+  margin-bottom: 3rem;
+  scroll-margin-top: 140px;
 }
+
 .menu-section h2 {
   font-family: "Playfair Display", serif;
   color: var(--marrom-escuro);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   margin-bottom: 0.8rem;
-  padding-left: 8px;
   border-left: 4px solid var(--Caramel);
+  padding-left: 10px;
 }
 
-/* Grid responsivo dos itens */
+/* ==============================
+   ITENS DO MENU
+============================== */
 .menu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--gap);
+  grid-template-columns: auto auto auto;
+  gap: 1.2rem;
 }
 
-/* Card do item */
 .menu-item {
-  background: var(--Cream);
+  background-color: var(--Cream);
   border-radius: 10px;
-  padding: 0.9rem;
+  padding: 1rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
+
 .menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+  transform: scale(1.05);
 }
+
 .menu-item img {
-  width: 100%;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.6rem;
 }
+
 .menu-item h3 {
-  font-size: 1.05rem;
-  margin: 0.2rem 0;
+  font-size: 1.1rem;
   color: var(--marrom-escuro);
 }
-.item-desc {
+
+.menu-item p {
   font-size: 0.9rem;
   color: #3a2126;
-  margin: 0.4rem 0;
 }
-.item-price {
-  font-weight: 600;
-  margin-top: auto;
-  color: var(--marrom-medio);
-}
-.item-actions {
-  margin-top: 0.6rem;
-}
-.btn-add {
-  background: var(--Brownie);
+
+.btn-minus {
+  background-color: var(--Coffee);
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
   color: var(--Cream);
-  border: none;
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.btn-add:hover {
-  background: var(--marrom-medio);
-  transform: translateY(-2px);
+  border-style: none;
 }
 
-/* Mensagens */
-.empty-msg {
-  color: #6b4b40;
-  font-style: italic;
-}
-.error-msg {
-  color: #b03030;
+.btn-plus {
+  background-color: var(--Coffee);
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  color: var(--Cream);
+  border-style: none;
+
 }
 
-/* Utilities */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+/* ==============================
+   RODAPÉ
+============================== */
+footer {
+  background-color: var(--marrom-escuro);
+  color: var(--Cream);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
 }
 
-/* Responsivo adicional */
-@media (max-width: 720px) {
-  .controls-row {
+footer nav a {
+  color: var(--Caramel);
+  margin: 0.1rem;
+  transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+  color: var(--branco);
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+@media (max-width: 768px) {
+  nav ul {
     flex-direction: column;
-    align-items: stretch;
+    gap: 0.8rem;
   }
-  .menu-header h1 {
-    font-size: 1.6rem;
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+    flex: 1;
+  }
+
+  .menu-items {
+    grid-template-columns: auto auto;
   }
 }
