@@ -106,9 +106,11 @@ main {
 /* Seção SOBRE */
 .Sobre {
   width: 800px;
-  margin: 30px;
+  margin: 90px;
+  margin-top: 90px;
   padding: 30px;
   color: white;
+ 
 }
 
 .Sobre h2 {
