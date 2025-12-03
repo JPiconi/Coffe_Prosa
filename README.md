@@ -2,45 +2,64 @@
 
 > Bem-Vindos ao Café&Prosa.
 
-Somos um empresa apaixonada por café, então decidimos criar um Site de Venda para quem é fã. Com mais de 50 itens em nosso cardapio, contendo Bebidas Quentes, Geladas e diversas iguarias para alegrar seu dia, e até quem não gosta de café se apaixona.
+Somos um empresa apaixonada por café, tanto que decidimos criar uma plataforma Web para todos que amam essa bebida. Com mais de 50 itens em nosso cardapio, contendo Bebidas Quentes, Geladas e diversas iguarias para alegrar seu dia, e até quem não gosta de café se apaixona.
 
 ---
 
-## Tecnologias Utilizadas
-
-- Visual Studio Code
-- Node.js
-- JSONWbetoken
-- Git Hub
-
-- MySQL2
-- BCrypt
-- Express.js
-- Cors
-- HTML/CSS
-- Java Script
-
 ## Instalação do Projeto:
+ A partir de agora nosso projeto não será mais mobile usando Expo.
+ Agora usamos Front-End (React) e Back-End (Node.js + Express).
 
-### 1. Requisito Nescessário
+ ## 🔧 1.Pré-requisitos:
+ É muito importante possuir em seu Computador.
+ 
+ ✔️ Git
+Use a versão apropriada para seu sistema operacional.
 
-É necessário ter instalado:
+✔️ Node.js (versão LTS – recomendada)
+Necessário para rodar tanto o front quanto o back.
 
-- [Node.js](https://nodejs.org/pt)
-- [Git-Bash](https://git-scm.com/downloads)
+## 📁 2.Escolher a pasta do projeto:
+1. Abra o explorador de arquivos.
 
-### 2. Clonar o repositório
+2. Escolha a pasta onde deseja criar o projeto (ex: Downloads).
 
-- Abra o gerenciador de Arquivos
-- Escolha qual pasta deseja utilizar
-- Aperte o botão direito do mouse e clique no (`Open Git Bash here`).
-  Irá abrir o programa [Git-Bash] caso seu sistema seja Windows, se for Linux Abra o programa terminal.
-- Digite o comando: (`git clone`) https://github.com/JPiconi/Coffe_Prosa.git
+3. Clique com o botão direito e selecione “Open Git Bash here” (Windows).
 
-### 3. Baixar dependências
+   No Linux/Mac, abra o Terminal.
 
-- Digite (`npm install`)
+## 3.Criar pasta Front-End:
 
-Para iniciar o projeto digite: (`npm start`)
+No terminal, execute:
 
-Depois, abra o navegador e digite a porta de entrada: http://localhost:3000.
+(`npx create react-app cafeprosa-frontend`)
+
+(`cd cafeprosa-frontend`)
+
+Instale rotas:
+
+(`npm install react-router-dom`)
+
+## 4.Criar pasta Back-End:
+
+Para criar o Back-End, volte para a pasta raiz 
+(`cd ..`)
+
+Crie a pasta Back-End
+(`mkdir cafeprosa-backend`)
+(`cd cafeprosa-back`)
+
+## 5.Instale as Dependências do Back-End:
+
+(`npm install express mysql2 body-parser cors`)
+
+## 6.Para rodar o Front e Back-End:
+
+Na pasta Front-End:
+(`npm run dev`)
+
+Na Pasta Back-End:
+(`nodemon server.js`)
+
+Abra o navegador e digite:
+(`http://localhost:3000`)
