@@ -8,6 +8,8 @@
   --marrom-medio: #7c4f2c;
   --marrom-claro: #bfa07a;
 
+  --Bege: #e4dbca;
+
   --Cream: #f3e9dc;
   --Caramel: #c08552;
   --Brownie: #5e3023;
@@ -50,7 +52,7 @@ body {
    CABEÇALHO
    ============================== */
 header {
-  background-color: var(--Cream);
+  background-color: var(--Bege);
   padding: 1.5rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 

@@ -1,5 +1,6 @@
 console.log("JS CONECTADO!");
 
+<<<<<<< HEAD
 const name = document.getElementById('nome').value;
 const email = document.getElementById('email').value;
 const password = document.getElementById('password').value;
@@ -7,6 +8,17 @@ const confirmPassword = document.getElementById('confirmPassword').value;
 const cpf = document.getElementById('cpf').value;
 const birthday = document.getElementById('birthday').value;
 
+=======
+const formulario = document.getElementById("registerForm");
+const nome = document.getElementById("name");
+const email = document.getElementById("email");
+const senha = document.getElementById("password");
+const confirmarSenha = document.getElementById("confirmPassword");
+const cpfInput = document.getElementById("cpf");
+const msgErrorElements = document.getElementsByClassName("msgError");
+
+/* ------ FUNÇÃO PARA RENDERIZAR AS DIFERENTES MENSAGENS DE ERRO! ------ */
+>>>>>>> 342ffbc707fff7c6bbe1abf63e0dc21cd2b30a37
 const createDisplayMsgError = (mensagem) => {
     if (msgErrorElements.length > 0) {
         msgErrorElements[0].textContent = mensagem;
@@ -44,23 +56,29 @@ const checkEmail = (emailValue) => {
 };
 
 function checkPasswordMatch() {
-    return password.value === confirmPassword.value ? true : false;
+    return senha.value === confirmarSenha.value ? true : false;
 }
 
+<<<<<<< HEAD
 function checkPasswordStrength(password) {
     if (!/[a-z]/.test(password)) {
+=======
+/* ------------- FUNÇÃO PARA VERIFICAR FORÇA DA SENHA ------------------ */
+function checkPasswordStrength(senha) {
+    if (!/[a-z]/.test(senha)) {
+>>>>>>> 342ffbc707fff7c6bbe1abf63e0dc21cd2b30a37
         return "A senha deve ter pelo menos uma letra minúscula!";
     }
-    if (!/[A-Z]/.test(password)) {
+    if (!/[A-Z]/.test(senha)) {
         return "A senha deve ter pelo menos uma letra maiúscula!";
     }
-    if (!/[\W_]/.test(password)) {
+    if (!/[\W_]/.test(senha)) {
         return "A senha deve ter pelo menos um caractere especial!";
     }
-    if (!/\d/.test(password)) {
+    if (!/\d/.test(senha)) {
         return "A senha deve ter pelo menos um número!";
     }
-    if (password.length < 8) {
+    if (senha.length < 8) {
         return "A senha deve ter pelo menos 8 caracteres!";
     }
 
@@ -111,22 +129,32 @@ async function fetchDatas(event) {
 
 
 
-    const passError = checkPasswordStrength(password.value);
-    if (passError) {
-        createDisplayMsgError(passError);
-        password.focus();
+    const senhaError = checkPasswordStrength(senha.value);
+    if (senhaError) {
+        createDisplayMsgError(senhaError);
+        senha.focus();
         return;
     }
     if (!checkPasswordMatch()) {
         createDisplayMsgError("As senhas não coincidem!");
-        confirmPassword.focus();
+        confirmarSenha.focus();
         return;
     }
 
     const formData = {
         username: nome.value.trim(),
         email: email.value.trim(),
+<<<<<<< HEAD
         password: password.value,
+=======
+
+        //`password`: Contém a senha digitada pelo usuário.
+        //Importante: A senha não deve ser "Trimmed" (não se deve usar .trim())
+        //porque espaços no ínicio ou no fim podem ser intencionais e parte da senha escolhida
+        password: senha.value,
+
+        //replace(/\D/d, "") usado para remover todos os carcteres que não são digitos
+>>>>>>> 342ffbc707fff7c6bbe1abf63e0dc21cd2b30a37
         cpf: cpf.value.replace(/\D/g, ""),
 
     };
@@ -181,28 +209,28 @@ email.addEventListener("input", () => {
     }
 });
 
-password.addEventListener("input", () => {
-    if (password.value && checkPasswordStrength(password.value)) {
-        createDisplayMsgError(checkPasswordStrength(password.value));
+senha.addEventListener("input", () => {
+    if (senha.value && checkPasswordStrength(senha.value)) {
+        createDisplayMsgError(checkPasswordStrength(senha.value));
     } else {
         createDisplayMsgError("");
     }
 });
 
 function checkPasswordStrength(senha) {
-    if (!/[a-z]/.test(password)) {
+    if (!/[a-z]/.test(senha)) {
         return "A senha deve ter pelo menos uma letra minúscula!";
     }
-    if (!/[A-Z]/.test(password)) {
+    if (!/[A-Z]/.test(senha)) {
         return "A senha deve ter pelo menos uma letra maiúscula!";
     }
-    if (!/[\W_]/.test(password)) {
+    if (!/[\W_]/.test(senha)) {
         return "A senha deve ter pelo menos um caractere especial!";
     }
-    if (!/\d/.test(password)) {
+    if (!/\d/.test(senha)) {
         return "A senha deve ter pelo menos um número!";
     }
-    if (password.length < 8) {
+    if (senha.length < 8) {
         return "A senha deve ter pelo menos 8 caracteres!";
     }
 

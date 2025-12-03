@@ -6,7 +6,7 @@
   --marrom-medio: #7c4f2c;
   --marrom-claro: #bfa07a;
 
-  --Bege: #AF8D71;
+  --Bege: #e4dbca;
 
   --Cream: #f3e9dc;
   --Caramel: #c08552;
@@ -34,7 +34,7 @@ body {
 }
 
 body {
-  background-color: var(--Bege);
+  background-color: var(--marrom-claro);
   color: var(--marrom-escuro);
   line-height: 1.6;
 
@@ -44,7 +44,7 @@ body {
      CABEÇALHO
      ============================== */
 header {
-  background-color: var(--Cream);
+  background-color: var(--Bege);
   padding: 1.5rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
@@ -69,7 +69,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--Brownie);
+  color: var(--marrom-escuro);
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 0.3rem 0.6rem;
@@ -227,3 +227,8 @@ footer nav a:hover {
     grid-template-columns: auto auto;
   }
 }
+
+.menu-section {
+  scroll-margin-top: 140px; /* ajuste até ficar perfeito para seu layout */
+}
+
