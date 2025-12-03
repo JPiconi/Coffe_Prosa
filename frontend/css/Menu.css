@@ -1,6 +1,6 @@
 /* ==============================
    VARIÁVEIS DE CORES
-   ============================== */
+============================== */
 :root {
   --marrom-escuro: #4e2e1e;
   --marrom-medio: #7c4f2c;
@@ -15,8 +15,8 @@
 }
 
 /* ==============================
-     RESET BÁSICO
-     ============================== */
+   RESET BÁSICO
+============================== */
 * {
   margin: 0;
   padding: 0;
@@ -30,22 +30,19 @@ html,
 body {
   height: 100%;
   scroll-behavior: smooth;
-  /* animação suave ao rolar */
 }
 
 body {
   background-color: var(--marrom-claro);
   color: var(--marrom-escuro);
-  line-height: 1.6;
-
 }
 
 /* ==============================
-     CABEÇALHO
-     ============================== */
+   CABEÇALHO
+============================== */
 header {
   background-color: var(--Bege);
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   display: flex;
@@ -58,8 +55,8 @@ header {
 }
 
 /* ==============================
-     NAVEGAÇÃO PRINCIPAL
-     ============================== */
+   NAVEGAÇÃO PRINCIPAL
+============================== */
 nav ul {
   display: flex;
   justify-content: center;
@@ -86,10 +83,9 @@ nav ul li a.active {
 }
 
 /* ==============================
-     MENU - CONTAINER PRINCIPAL
-     ============================== */
+   MENU - CONTAINER PRINCIPAL
+============================== */
 .menu-container {
-  background-color: red;
   max-width: 900px;
   margin: 2rem auto;
   background-color: var(--Cream);
@@ -98,7 +94,9 @@ nav ul li a.active {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Navegação do Menu (filtros/categories) */
+/* ==============================
+   MENU - NAVEGAÇÃO INTERNA
+============================== */
 .menu-nav {
   width: auto;
   display: flex;
@@ -106,15 +104,15 @@ nav ul li a.active {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
+
   position: sticky;
   top: 15px;
+  z-index: 10;
+
   background-color: var(--Cream);
-  border-color: var(--Caramel);
-  border-width: 1.50px;
-  border-style: groove;
+  border: 1.5px groove var(--Caramel);
   padding: 0.8rem;
   border-radius: 12px;
-  z-index: 10;
 }
 
 .menu-nav button {
@@ -133,10 +131,12 @@ nav ul li a.active {
   color: var(--Brownie);
 }
 
-/* Seções do Menu */
+/* ==============================
+   SEÇÕES DO MENU
+============================== */
 .menu-section {
   margin-bottom: 3rem;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 140px;
 }
 
 .menu-section h2 {
@@ -148,7 +148,9 @@ nav ul li a.active {
   padding-left: 10px;
 }
 
-/* Itens do Menu */
+/* ==============================
+   ITENS DO MENU
+============================== */
 .menu-items {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -186,10 +188,9 @@ nav ul li a.active {
   color: #3a2126;
 }
 
-
 /* ==============================
-     RODAPÉ
-     ============================== */
+   RODAPÉ
+============================== */
 footer {
   background-color: var(--marrom-escuro);
   color: var(--Cream);
@@ -209,8 +210,8 @@ footer nav a:hover {
 }
 
 /* ==============================
-     RESPONSIVIDADE
-     ============================== */
+   RESPONSIVIDADE
+============================== */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -227,8 +228,3 @@ footer nav a:hover {
     grid-template-columns: auto auto;
   }
 }
-
-.menu-section {
-  scroll-margin-top: 140px; /* ajuste até ficar perfeito para seu layout */
-}
-

@@ -1,17 +1,22 @@
 /* ==============================
-   ESTILO PRINCIPAL - Café&Prosa
-   ============================== */
-
+   VARIÁVEIS DE CORES
+============================== */
 :root {
   --marrom-escuro: #4e2e1e;
   --marrom-medio: #7c4f2c;
   --marrom-claro: #bfa07a;
-  --bege: #e4dbca;
-  --dourado: #c9a66b;
-  --branco: #fff;
+
+  --Bege: #e4dbca;
+
+  --Cream: #f3e9dc;
+  --Caramel: #c08552;
+  --Brownie: #5e3023;
+  --Coffee: #895737;
 }
 
-/* Reset básico */
+/* ==============================
+   RESET BÁSICO
+============================== */
 * {
   margin: 0;
   padding: 0;
@@ -21,23 +26,28 @@
   font-family: "Poppins", sans-serif;
 }
 
-html,
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100%;
-  background-color: #af8d71;
+  background-color: var(--marrom-claro);
   color: var(--marrom-escuro);
   line-height: 1.6;
 
   display: flex;
   flex-direction: column;
-
   flex: 1;
 }
 
-/* Cabeçalho */
+/* ==============================
+   CABEÇALHO
+============================== */
 header {
-  background-color: var(--bege);
-  padding: 1.5rem 2rem;
+  background-color: var(--Bege);
+  padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   display: flex;
@@ -49,7 +59,9 @@ header {
   height: 100px;
 }
 
-/* Navegação */
+/* ==============================
+   NAVEGAÇÃO
+============================== */
 nav ul {
   display: flex;
   justify-content: center;
@@ -59,7 +71,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #4e2e1e;
+  color: var(--marrom-escuro);
   font-weight: 500;
   transition: all 0.3s ease;
   padding: 0.3rem 0.6rem;
@@ -71,13 +83,15 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-  color: var(--branco);
-  background-color: #3a2a21;
+  color: var(--Cream);
+  background-color: var(--Brownie);
 }
 
-/* Seção principal */
+/* ==============================
+   CONTEÚDO PRINCIPAL
+============================== */
 main {
-  background-color: var(--bege);
+  background-color: var(--Bege);
   padding: 2rem;
   margin: 20px;
   border-radius: 15px;
@@ -85,12 +99,13 @@ main {
   flex: 1;
 }
 
+/* SOBRE */
 .Sobre {
   width: 700px;
   margin-top: 50px;
-  color: white;
   padding: 100px;
   margin-left: 50px;
+  color: var(--Cream);
 }
 
 .Sobre h2 {
@@ -102,11 +117,13 @@ main {
 .Sobre p {
   font-family: "Playfair Display", serif;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
+  text-shadow: 2px 2px 0px #000000,
+               5px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
+/* BOTÕES */
 .Botoes {
-  color: violet;
+  color: var(--Caramel);
 }
 
 .Botao {
@@ -116,6 +133,7 @@ main {
   border-color: transparent;
 }
 
+/* TEXTOS GERAIS */
 section h2 {
   color: var(--marrom-escuro);
   font-family: "Playfair Display", serif;
@@ -128,30 +146,44 @@ section p {
   color: #3a2a21;
 }
 
-/* Rodapé */
+/* ==============================
+   RODAPÉ
+============================== */
 footer {
   background-color: var(--marrom-escuro);
-  color: var(--bege);
+  color: var(--Cream);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
 }
 
 footer nav a {
-  color: var(--dourado);
+  color: var(--Caramel);
   margin: 0 0.5rem;
   transition: color 0.3s ease;
 }
 
 footer nav a:hover {
-  color: var(--branco);
+  color: var(--Cream);
 }
 
-/* Animação suave ao rolar */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Responsividade */
+/* ==============================
+   RESPONSIVIDADE
+============================== */
 @media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .Sobre {
+    width: 100%;
+    padding: 40px;
+    margin-left: 0;
+  }
+
+  main {
+    margin: 10px;
+    padding: 1.5rem;
+  }
 }
