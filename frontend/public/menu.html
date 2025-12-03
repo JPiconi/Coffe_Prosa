@@ -1,179 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
-    <title>Café&Prosa</title>
-    <link rel="stylesheet" href="/Css/Menu.css" />
-    <script src="../js/menu.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <script src="../js/onboarding.js" defer></script>
-    <script src="../js/login.js" defer></script>
-    <script src="../js/register.js" defer></script>
-    <script src="../js/password-recovery.js" defer></script>
-    <script src="../js/menu.js" defer></script>
-    <script src="../js/cart.js" defer></script>
-    <script src="../js/payment.js" defer></script>
-    <script src="../js/customer-dashboard.js" defer></script>
-    <script src="../js/admin-dashboard.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <a href="index.html" class="logo">
-        <img
-          src="/Img/Texto do seu parágrafo (2)-Photoroom.png"
-          alt="Logo Café&Prosa"
-          class="logo"
-        />
-      </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
+  <title>Café&Prosa</title>
+  <link rel="stylesheet" href="/Css/Menu.css" />
+  <script src="../js/menu.js" defer></script>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html" class="active">Cardápio</a></li>
-          <li><a href="cart.html">Carrinho</a></li>
-          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
-          <li><a href="payment.html">Pagamento</a></li>
-        </ul>
-      </nav>
-    </header>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
 
-    <main>
-      <div class="menu-container">
-        <div class="menu-nav">
-          <button data-target="mais-vendidos">Mais vendidos</button>
-          <button data-target="cafes-quentes">Cafés quentes</button>
-          <button data-target="cafes-gelados">Cafés gelados</button>
-          <button data-target="salgados">Salgados</button>
-        </div>
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <img src="/Img/Texto do seu parágrafo (2)-Photoroom.png" alt="Logo Café&Prosa" class="logo" />
+    </a>
 
-        <div class="menu-section" id="mais-vendidos">
-          <h2>Mais Vendidos</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <a href="/Expresso_Classico.html">
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                  alt="Espresso"
-                  class="oi"
-              /></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Cardápio</a></li>
+        <li><a href="cart.html">Carrinho</a></li>
+        <li><a href="payment.html">Pagamento</a></li>
+      </ul>
+    </nav>
+  </header>
 
-              <h3>Espresso Clássico</h3>
-              <p>R$ 7,00</p>
-            </div>
-            <div class="menu-item">
-              <a href="/Expresso_Classico.html">
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                  alt="Espresso"
-                  class="oi"
-              /></a>
+  <main>
+    <div class="menu-container">
+      <!-- NAV DAS CATEGORIAS -->
+      <div class="menu-nav">
+        <button data-target="cafes-gelados">Cafés Gelados</button>
+        <button data-target="frappes-milkshakes">Frappés e Milkshakes</button>
+        <button data-target="chas-gelados">Bebidas com Chás Gelados</button>
+        <button data-target="bebidas-cremosas">Bebidas Cremosas</button>
+        <button data-target="drinks-casa">Drinks da Casa</button>
+      </div>
 
-              <h3>Espresso Clássico</h3>
-              <p>R$ 7,00</p>
-            </div>
-            <div class="menu-item">
-              <a href="/Expresso_Classico.html">
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                  alt="Espresso"
-                  class="oi"
-              /></a>
+      <!-- =======================
+              1. CAFÉS GELADOS
+        ========================= -->
+      <div class="menu-section" id="cafes-gelados">
+        <h2>Cafés Gelados</h2>
+        <div class="menu-items">
 
-              <h3>Espresso Clássico</h3>
-              <p>R$ 7,00</p>
-            </div>
-
-            <div class="menu-item">
-              <img
-                src=" https://png.pngtree.com/png-clipart/20250417/original/pngtree-a-creamy-cup-of-cappuccino-topped-with-frothy-milk-and-cocoa-png-image_20847621.png"
-                alt="Cappuccino"
-              />
-              <h3>Cappuccino Cremoso</h3>
-              <p>R$ 10,00</p>
-            </div>
+          <div class="menu-item">
+            <img src="https://cloudassets.starbucks.com/is/image/sbuxcorp/IcedCaffeAmericano?impolicy=1by1_wide_topcrop_630&crop=180,360,1440,1440&wid=630&hei=630&qlt=85" alt=""
+              height="150px"
+              width="150px" />
+            <h3>Iced Americano 450ml</h3>
+            <p>R$ 10,00 / Vegano R$ 11,00</p>
           </div>
-        </div>
 
-        <div class="menu-section" id="cafes-quentes">
-          <h2>Cafés Quentes</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                alt="Latte"
-              />
-              <h3>Café Latte</h3>
-              <p>R$ 9,00</p>
-            </div>
-            <div class="menu-item">
-              <img
-                src="https://www.nescafe.com/br/sites/default/files/2023-08/Nes_Web3_Article_Header_Mocha_1448x1240.png"
-                alt="Mocha"
-              />
-              <h3>Mocha Chocolate</h3>
-              <p>R$ 11,00</p>
-            </div>
+          <div class="menu-item">
+            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/iced-latte-30188f7.jpg?quality=90&resize=440,400" alt="">
+            <h3>Iced Latte (baunilha, caramelo, avelã) 450ml</h3>
+            <p>R$ 13,50 / Vegano R$ 15,00</p>
           </div>
-        </div>
 
-        <div class="menu-section" id="cafes-gelados">
-          <h2>Cafés Gelados</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <img
-                src="/Img/image-removebg-preview.png"
-                alt="Iced Latte"
-                style="height: 200px"
-              />
-              <h3>Iced Latte</h3>
-              <p>R$ 12,00</p>
-            </div>
-            <div class="menu-item">
-              <img
-                src="https://png.pngtree.com/png-vector/20241225/ourmid/pngtree-3d-frappuccino-with-whipped-cream-and-chocolate-png-image_14852301.png"
-                alt="Frappuccino"
-                style="height: 200px"
-              />
-              <h3>Frappuccino</h3>
-              <p>R$ 13,00</p>
-            </div>
+          <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDsmbiq4BN7CBpk3adlyDFHuJkJBsXHgQ_MBT5deNl3j_phkxzAZdjI124Fh5wok8nFcU&usqp=CAU" alt="">
+            <h3>Cold Brew 450ml</h3>
+            <p>R$ 12,00 / Vegano R$ 13,20</p>
           </div>
-        </div>
 
-        <div class="menu-section" id="salgados">
-          <h2>Salgados</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <img
-                src="https://png.pngtree.com/png-clipart/20240327/original/pngtree-cheese-bread-brazilian-snack-pao-de-queijo-png-image_14691916.png"
-                alt="Pão de Queijo"
-              />
-              <h3>Pão de Queijo</h3>
-              <p>R$ 5,00</p>
-            </div>
-            <div class="menu-item">
-              <img src="/Img/download.png" alt="Torta" />
-              <h3>Torta de Frango</h3>
-              <p>R$ 8,00</p>
-            </div>
+          <div class="menu-item">
+            <img src="https://res.cloudinary.com/htt8g4cd/image/upload/w_1920,h_1280,c_lfill,ar_3:2,g_center,f_auto,q_auto/wp/07_23_espresso_tonic_hero_stocksy_4062559_1920x1280" alt="">
+            <h3>Espresso Tonic 350ml</h3>
+            <p>R$ 15,00 / Vegano R$ 16,50</p>
           </div>
+
+          <div class="menu-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Affogato_al_Caffe.jpg" alt="">
+            <h3>Affogato Gelado 450ml</h3>
+            <p>R$ 20,00 / Vegano R$ 22,00</p>
+          </div>
+
         </div>
       </div>
-    </main>
 
-    <footer>
-      <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
-      <nav>
-        <a href="about.html">Sobre Nós</a> |
-        <a href="contact.html">Contato</a> |
-        <a href="privacy.html">Política de Privacidade</a>
-      </nav>
-    </footer>
-  </body>
+      <!-- =======================
+              2. FRAPPÉS E MILKSHAKES
+        ========================= -->
+      <div class="menu-section" id="frappes-milkshakes">
+        <h2>Frappés e Milkshakes</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="https://saboreiaavida.nestle.pt/sites/default/files/styles/receita_card_620x560/public/2020-09/Cafe_Frappe_com_Chantilly_e_Chocolate.png?h=fd38a500&itok=vnt8N4hz" alt="">
+            <h3>Frappé de Café com Chantilly 500ml</h3>
+            <p>R$ 18,00 / Vegano R$ 19,80</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://images.mrcook.app/recipe-image/0190c1f1-948a-7bc0-a2d1-51f0e02546d3?cacheKey=U3VuLCAxMiBKYW4gMjAyNSAwMzozODoyNCBHTVQ=" alt="">
+            <h3>Frappé de Doce de Leite 500ml</h3>
+            <p>R$ 18,00 / Vegano R$ 19,80</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/632052b7622fd99e99c87b22dbdaf1f0.jpg" alt="">
+            <h3>Milk Shake de Cappuccino 500ml</h3>
+            <p>R$ 16,00 / Vegano R$ 17,70</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa_k1FHcYOV9hw9i2h05toq8aRY105zw6vBkTwDlplgaohq9WELWcgJmlWyYgyhTgowt0&usqp=CAU" alt="">
+            <h3>Mocha Gelado 250ml</h3>
+            <p>R$ 20,00 / Vegano R$ 22,00</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             3. CHÁS GELADOS
+        ========================= -->
+      <div class="menu-section" id="chas-gelados">
+        <h2>Bebidas com Chás Gelados</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="https://i.ytimg.com/vi/XVyEBQu6mHc/sddefault.jpg" alt="">
+            <h3>Chá Verde com Limão e Mel 250ml</h3>
+            <p>R$ 11,50 / Vegano R$ 12,75</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://blog.sanavita.com.br/wp-content/uploads/2013/11/Cha-de-hibisco_Easy-Resize.com_-1140x720-1.jpg" alt="">
+            <h3>Chá de Hibisco com Frutas Vermelhas 250ml</h3>
+            <p>R$ 13,50</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://thumbs.dreamstime.com/b/ch%C3%A1-de-maracuj%C3%A1-gelado-em-vidro-pl%C3%A1stico-com-folhas-preto-refrescante-um-colocado-tapete-358935815.jpg" alt="">
+            <h3>Chá Preto com Maracujá 250ml</h3>
+            <p>R$ 13,00</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://conteudo.imguol.com.br/c/entretenimento/4c/2022/10/27/matcha-latte-com-leite-1666898712766_v2_4x3.jpg" alt="">
+            <h3>Matcha Gelado com Leite de Coco 250ml</h3>
+            <p>R$ 15,00 / Vegano R$ 16,50</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             4. BEBIDAS CREMOSAS
+        ========================= -->
+      <div class="menu-section" id="bebidas-cremosas">
+        <h2>Bebidas Cremosas (Sem Café)</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="https://d21wiczbqxib04.cloudfront.net/HXEqPG-VDDaMlb-avETVPc-OQDM=/0x600/smart/https://osuper-ecommerce-superwillner.s3.sa-east-1.amazonaws.com/a014fc99-shakemorango.jpg" alt="">
+            <h3>Smoothie de Morango com Banana 500ml</h3>
+            <p>R$ 14,00 / Vegano R$ 15,40</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://vitat.com.br/receitas/images/recipeshandler.jpg?id=25490&tipo=r&default=s&ims=fit-in/414x275/filters:quality(60)" alt="">
+            <h3>Smoothie de Manga com Gengibre 500ml</h3>
+            <p>R$ 14,00 / Vegano R$ 15,40</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://www.sabornamesa.com.br/media/k2/items/cache/d24f41dbfda2b68df8b2911f7ac444c1_XL.jpg" alt="">
+            <h3>Leite com Baunilha e Canela Gelado 300ml</h3>
+            <p>R$ 13,00 / Vegano R$ 14,30</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://static.itdg.com.br/images/1200-630/8787e340b7cf4572a165251329aa1357/vitamina-de-banana-e-cacau-com-leite-de-aveia.jpg" alt="">
+            <h3>Cacau Gelado com Leite de Aveia 350ml</h3>
+            <p>R$ 15,00 / Vegano R$ 16,50</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             5. DRINKS AUTORAIS
+        ========================= -->
+      <div class="menu-section" id="drinks-casa">
+        <h2>Drinks Autorais</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="https://www.crosstown.co.uk/wp-content/uploads/2024/07/iced-chocolate-1022x1024.webp" alt="">
+            <h3>Cold Mocha Citrus 250ml</h3>
+            <p>R$ 22,00 / Vegano R$ 24,20</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQedKeswNTFnmtf0PRNMw1tUDuWV4Aajh0SlQ&s" alt="">
+            <h3>Latte Tropical 300ml</h3>
+            <p>R$ 23,00 / Vegano R$ 25,30</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://www.cafebritt.com/cdn/shop/articles/blog-mint-iced-coffee-cooler.webp?v=1698163381" alt="">
+            <h3>Espresso Mint Cooler 250ml</h3>
+            <p>R$ 20,00 / Vegano R$ 22,00</p>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://static.itdg.com.br/images/1200-675/50ee33e4d32b590b16e283809c075df5/shutterstock-665428054.jpg" alt="">
+            <h3>Choco Pimenta Gelado 400ml</h3>
+            <p>R$ 21,00 / Vegano R$ 23,10</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
+    <nav>
+      <a href="about.html">Sobre Nós</a> |
+      <a href="contact.html">Contato</a> |
+      <a href="privacy.html">Política de Privacidade</a>
+    </nav>
+  </footer>
+</body>
+
 </html>
