@@ -194,7 +194,7 @@ nav ul li a.active {
 
 .menu-item img {
   width: 200px;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.6rem;
@@ -208,6 +208,25 @@ nav ul li a.active {
 .menu-item p {
   font-size: 0.9rem;
   color: #3a2126;
+}
+
+.btn-minus {
+  background-color: var(--Coffee);
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  color: var(--Cream);
+  border-style: none;
+}
+
+.btn-plus {
+  background-color: var(--Coffee);
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  color: var(--Cream);
+  border-style: none;
+
 }
 
 /* ==============================
