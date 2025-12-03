@@ -117,8 +117,7 @@ main {
 .Sobre p {
   font-family: "Playfair Display", serif;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 0px #000000,
-               5px 4px 0px rgba(0, 0, 0, 0.15);
+  text-shadow: 2px 2px 0px #000000, 5px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 /* BOTÕES */
@@ -186,4 +185,74 @@ footer nav a:hover {
     margin: 10px;
     padding: 1.5rem;
   }
+}
+
+/* ==============================
+   BOTÕES GERAIS
+============================== */
+.button-primary {
+  background-color: var(--Brownie);
+  color: var(--Cream);
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--marrom-escuro);
+}
+
+/* Botão em links */
+a.button-primary {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--Cream);
+}
+
+/* ==============================
+   CART & PAYMENT
+============================== */
+#cart-summary,
+.payment-box {
+  background-color: var(--Cream);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  margin: auto;
+}
+
+#cart-items .item,
+.cart-item {
+  background: var(--Bege);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.payment-box label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.payment-box select,
+.payment-box input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--Coffee);
+  margin-bottom: 1.2rem;
+}
+
+.payment-box h1 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1.5rem;
 }
