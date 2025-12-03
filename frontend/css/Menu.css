@@ -194,8 +194,6 @@ a {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
 }
 .menu-item img {
-  width: 200px;
-  height: 200px;
   width: 100%;
   height: 140px;
   object-fit: cover;
@@ -210,31 +208,6 @@ a {
 .item-desc {
   font-size: 0.9rem;
   color: #3a2126;
-}
-
-.btn-minus {
-  background-color: var(--Coffee);
-  width: 25px;
-  height: 25px;
-  border-radius: 3px;
-  color: var(--Cream);
-  border-style: none;
-}
-
-.btn-plus {
-  background-color: var(--Coffee);
-  width: 25px;
-  height: 25px;
-  border-radius: 3px;
-  color: var(--Cream);
-  border-style: none;
-}
-
-/* ==============================
-   RODAPÉ
-============================== */
-footer {
-  background-color: var(--marrom-escuro);
   margin: 0.4rem 0;
 }
 .item-price {
