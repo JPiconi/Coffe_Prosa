@@ -1,5 +1,6 @@
 console.log("JS CONECTADO!");
 
+<<<<<<< HEAD
 const formulario = document.getElementById("registerForm");
 const nome = document.getElementById("name");
 const email = document.getElementById("email");
@@ -102,6 +103,9 @@ cpfInput.addEventListener("input", function (e) {
 /* ------------- FUNÇÃO PARA VERIFICAR E ENVIAR DADOS ------------------ */
 async function fetchDatas(event) {
     // Tornar a Função async para usar await
+=======
+registerForm.addEventListener('submit', function (event) {
+>>>>>>> 56ed4384f1c9f355ffd0e5da614cf4a646cddd14
     event.preventDefault();
     createDisplayMsgError(""); //Limpa mensagens de erro anteriores
 
@@ -159,6 +163,7 @@ async function fetchDatas(event) {
 
     };
 
+<<<<<<< HEAD
     console.log("Dados a serem enviados: ", JSON.stringify(formData, null, 2));
 
     // ---- INÍCIO DA LÓGICA DE ENVIO ----
@@ -240,3 +245,26 @@ function checkPasswordStrength(senha) {
 
     return null;
 }
+=======
+    fetch('http://localhost:3000/api/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Registration failed');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert(data.message);
+            window.location.href = 'login.html';
+        })
+        .catch(error => {
+            alert(error.message);
+        });
+});
+>>>>>>> 56ed4384f1c9f355ffd0e5da614cf4a646cddd14
