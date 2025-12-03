@@ -31,8 +31,15 @@
   </header>
 
   <main>
+
+
+
     <div class="menu-container">
 
+      <!-- ÁREA DE PESQUISA -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar produtos..." />
+      </div>
       <!-- NAV DAS CATEGORIAS -->
       <div class="menu-nav">
         <button data-target="cafes-gelados">CAFÉS GELADOS</button>
@@ -66,8 +73,7 @@
           </div>
 
           <div class="menu-item">
-            <img src="/frontend/Img/CAFÉS GELADOS/Iced Latte .webp"
-              alt="">
+            <img src="/frontend/Img/CAFÉS GELADOS/Iced Latte .webp" alt="">
             <h3>Iced Latte (caramelo) 450ml</h3>
             <p>R$ 13,50 / Vegano R$ 15,00</p>
 
@@ -79,9 +85,7 @@
           </div>
 
           <div class="menu-item">
-            <img
-              src="/frontend/Img/CAFÉS GELADOS/Cold Brew.webp"
-              alt="">
+            <img src="/frontend/Img/CAFÉS GELADOS/Cold Brew.webp" alt="">
             <h3>Cold Brew 450ml</h3>
             <p>R$ 12,00 / Vegano R$ 13,20</p>
 
@@ -956,6 +960,35 @@
         });
       });
     })();
+
+
+
+
+
+
+
+
+
+
+
+    // FILTRAR PRODUTOS
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function () {
+      const term = searchInput.value.toLowerCase();
+      const items = document.querySelectorAll(".menu-item");
+
+      items.forEach(item => {
+        const title = item.querySelector("h3").textContent.toLowerCase();
+
+        if (title.includes(term)) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+
   </script>
 </body>
 

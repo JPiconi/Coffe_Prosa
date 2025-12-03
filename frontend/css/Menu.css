@@ -5,9 +5,7 @@
   --marrom-escuro: #4e2e1e;
   --marrom-medio: #7c4f2c;
   --marrom-claro: #bfa07a;
-
   --Bege: #e4dbca;
-
   --Cream: #f3e9dc;
   --Caramel: #c08552;
   --Brownie: #5e3023;
@@ -44,7 +42,6 @@ header {
   background-color: var(--Bege);
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
   display: flex;
   justify-content: center;
   gap: 150px;
@@ -86,12 +83,32 @@ nav ul li a.active {
    MENU - CONTAINER PRINCIPAL
 ============================== */
 .menu-container {
-  max-width: 900px;
+  max-width: 1250px;
   margin: 2rem auto;
   background-color: var(--Cream);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+/* Scroll transparente para menu-container */
+.menu-container::-webkit-scrollbar {
+  width: 8px;
+}
+.menu-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.menu-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Para Firefox */
+.menu-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.1) transparent;
 }
 
 /* ==============================
@@ -101,42 +118,34 @@ nav ul li a.active {
   width: 100%;
   display: flex;
   gap: 1rem;
-
   overflow-x: auto;
   white-space: nowrap;
   flex-wrap: nowrap;
-
   margin-bottom: 1.5rem;
-
   position: sticky;
   top: 15px;
   z-index: 10;
-
   background-color: var(--Cream);
   border: 1.5px groove var(--Caramel);
   padding: 0.8rem;
   border-radius: 10px;
-
-  scrollbar-width: thin; /* Firefox */
+  scrollbar-width: thin;
   scrollbar-color: var(--Brownie) transparent;
 }
 
-/* Estilo do scroll para Chrome, Edge, etc */
 .menu-nav::-webkit-scrollbar {
   height: 8px;
 }
-
 .menu-nav::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .menu-nav::-webkit-scrollbar-thumb {
   background-color: var(--Brownie);
   border-radius: 10px;
 }
 
 .menu-nav button {
-  flex: 0 0 auto; /* 🔥 botão não cresce, não quebra linha */
+  flex: 0 0 auto;
   background-color: var(--Brownie);
   color: var(--Cream);
   border: none;
@@ -154,10 +163,10 @@ nav ul li a.active {
 }
 
 /* ==============================
-   SEÇÕES DO MENU
+   SEÇÕES
 ============================== */
 .menu-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   scroll-margin-top: 140px;
 }
 
@@ -186,6 +195,7 @@ nav ul li a.active {
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+
 }
 
 .menu-item:hover {
@@ -210,7 +220,8 @@ nav ul li a.active {
   color: #3a2126;
 }
 
-.btn-minus {
+.btn-minus,
+.btn-plus {
   background-color: var(--Coffee);
   width: 25px;
   height: 25px;
@@ -219,14 +230,30 @@ nav ul li a.active {
   border-style: none;
 }
 
-.btn-plus {
-  background-color: var(--Coffee);
-  width: 25px;
-  height: 25px;
-  border-radius: 3px;
-  color: var(--Cream);
-  border-style: none;
+/* Scroll transparente para itens ativos da busca */
+.search-active .menu-items {
+  display: flex !important;
+  flex-direction: column;
+  gap: 15px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
 
+.search-active .menu-items::-webkit-scrollbar {
+  width: 8px;
+}
+.search-active .menu-items::-webkit-scrollbar-track {
+  background: transparent;
+}
+.search-active .menu-items::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Para Firefox */
+.search-active .menu-items {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.1) transparent;
 }
 
 /* ==============================
@@ -268,4 +295,26 @@ footer nav a:hover {
   .menu-items {
     grid-template-columns: auto auto;
   }
+}
+
+/* ==============================
+   ÁREA DE PESQUISA
+============================== */
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 60%;
+  max-width: 700px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid var(--marrom-claro);
+  font-size: 18px;
+  padding: 10px;
+  outline: none;
+  background: #fff;
 }
