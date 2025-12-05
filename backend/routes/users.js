@@ -4,7 +4,9 @@ import { db } from "../db.js";
 
 const router = express.Router();
 
+// ==========================
 // Criar usuário
+// ==========================
 router.post("/register", async (req, res) => {
   console.log("Chegou na rota de registro de usuário", req.body);
   try {
@@ -31,7 +33,9 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// ==========================
 // Login com registro no histórico
+// ==========================
 router.post("/login", async (req, res) => {
   console.log("Chegou na rota de login de usuário", req.body);
   try {
