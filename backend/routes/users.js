@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Criar usuário
 router.post("/register", async (req, res) => {
+  console.log("Chegou na rota de registro de usuário", req.body);
   try {
     const { name, email, password, cpf, birthday } = req.body;
 
@@ -32,10 +33,11 @@ router.post("/register", async (req, res) => {
 
 // Login com registro no histórico
 router.post("/login", async (req, res) => {
+  console.log("Chegou na rota de login de usuário", req.body);
   try {
-    const { cpf, password } = req.body;
+    const { email, password } = req.body;
 
-    const [rows] = await db.query("SELECT * FROM users WHERE cpf = ?", [cpf]);
+    const [rows] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
     if (rows.length === 0)
       return res.status(404).json({ error: "Usuário não encontrado." });
 

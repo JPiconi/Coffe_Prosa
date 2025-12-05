@@ -1,30 +1,54 @@
-const paymentForm = document.getElementById("payment-form");
-const totalPriceElement = document.getElementById("total-price");
-const paymentMethodSelect = document.getElementById("payment-method");
+const API = "http://localhost:8000";
 
-window.addEventListener("DOMContentLoaded", () => {
-  const total = localStorage.getItem("cartTotal");
-  if (total) totalPriceElement.value = "R$ " + total;
+document.addEventListener("DOMContentLoaded", () => {
+  const totalPrice = localStorage.getItem("total_price") || "0.00";
+  document.getElementById("total-price").value = `R$ ${totalPrice}`;
 });
 
-paymentForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+document.getElementById("payment-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-  const paymentData = {
-    total: totalPriceElement.value,
-    method: paymentMethodSelect.value,
+  const payment_value = Number(localStorage.getItem("total_price"));
+  const id_effective_product_sale = localStorage.getItem("last_sale_id");
+  const payment_description = document.getElementById("payment-method").value;
+
+  const msg = document.getElementById("payment-message");
+
+  if (!id_effective_product_sale) {
+    msg.innerHTML = "Nenhuma venda foi encontrada.";
+    msg.style.color = "red";
+    return;
+  }
+
+  const payload = {
+    payment_value,
+    id_effective_product_sale,
+    payment_description
   };
 
-  fetch("/api/payment", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(paymentData),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      alert("Pagamento aprovado!");
-      localStorage.removeItem("cartTotal");
-      window.location.href = "/frontend/public/success.html";
-    })
-    .catch(() => alert("Erro ao processar pagamento."));
+  try {
+    const response = await fetch(`${API}/payment`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      msg.textContent = data.error || "Erro ao processar pagamento.";
+      msg.style.color = "red";
+      return;
+    }
+
+    msg.style.color = "green";
+    msg.textContent = "Pagamento realizado com sucesso!";
+
+    localStorage.removeItem("last_sale_id");
+    localStorage.removeItem("total_price");
+
+  } catch (err) {
+    msg.textContent = "Erro de conexão com o servidor.";
+    msg.style.color = "red";
+  }
 });

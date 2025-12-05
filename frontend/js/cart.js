@@ -1,48 +1,55 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const API = "http://localhost:8000";
 
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
+document.addEventListener("DOMContentLoaded", async () => {
+  const userId = localStorage.getItem("userId");
 
-function updateCartDisplay() {
-  const itemsContainer = document.getElementById("cart-items");
-  itemsContainer.innerHTML = "";
+  if (!userId) {
+    alert("Você precisa fazer login para continuar.");
+    window.location.href = "login.html";
+    return;
+  }
 
-  cart.forEach((item) => {
-    const element = document.createElement("div");
-    element.className = "item";
-    element.innerHTML = `
-            <span>${item.name} — R$ ${item.price} x ${item.quantity}</span>
-            <button onclick="removeFromCart(${item.id})" class="button-primary" style="padding:5px 10px; font-size:0.8rem;">Remover</button>
+  const cartContainer = document.getElementById("cart-items");
+  const totalElement = document.getElementById("cart-total");
+
+  try {
+    const response = await fetch(`${API}/cart/${userId}`);
+
+    if (!response.ok) {
+      cartContainer.innerHTML = "<p>Erro ao carregar o carrinho.</p>";
+      return;
+    }
+
+    const data = await response.json();
+
+    if (!data.items || data.items.length === 0) {
+      cartContainer.innerHTML = "<p>Seu carrinho está vazio.</p>";
+      totalElement.textContent = "R$ 0,00";
+      return;
+    }
+
+    let total = 0;
+
+    cartContainer.innerHTML = data.items
+      .map(item => {
+        total += Number(item.final_price_product);
+
+        return `
+          <div class="cart-item">
+              <h4>${item.product_name}</h4>
+              <p>Quantidade: ${item.qtde_produto}</p>
+              <p>Preço unitário: R$ ${item.price_product.toFixed(2)}</p>
+              <p><strong>Total: R$ ${item.final_price_product.toFixed(2)}</strong></p>
+          </div>
         `;
-    itemsContainer.appendChild(element);
-  });
+      })
+      .join("");
 
-  const total = calculateTotal();
-  document.getElementById("cart-total").textContent = "R$ " + total;
+    totalElement.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
 
-  localStorage.setItem("cartTotal", total);
-}
+    localStorage.setItem("total_price", total);
 
-function calculateTotal() {
-  return cart
-    .reduce((sum, item) => sum + item.price * item.quantity, 0)
-    .toFixed(2);
-}
-
-function addToCart(item) {
-  const found = cart.find((i) => i.id === item.id);
-  if (found) found.quantity++;
-  else cart.push({ ...item, quantity: 1 });
-
-  saveCart();
-  updateCartDisplay();
-}
-
-function removeFromCart(id) {
-  cart = cart.filter((item) => item.id !== id);
-  saveCart();
-  updateCartDisplay();
-}
-
-window.addEventListener("DOMContentLoaded", updateCartDisplay);
+  } catch (err) {
+    cartContainer.innerHTML = "<p>Erro ao conectar com o servidor.</p>";
+  }
+});

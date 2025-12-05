@@ -1,133 +1,105 @@
-const adminDashboard = (() => {
-    const menuTableBody = document.getElementById('menu-table-body');
-    const customerTableBody = document.getElementById('customer-table-body');
+const API = "http://localhost:8000";
 
-    const fetchMenuItems = async () => {
-        try {
-            const response = await fetch('/api/admin/menu');
-            const menuItems = await response.json();
-            renderMenuItems(menuItems);
-        } catch (error) {
-            console.error('Error fetching menu items:', error);
-        }
-    };
+document.addEventListener("DOMContentLoaded", () => {
+    loadProducts();
+    loadUsers();
 
-    const renderMenuItems = (menuItems) => {
-        menuTableBody.innerHTML = '';
-        menuItems.forEach(item => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item.id}</td>
-                <td>${item.name}</td>
-                <td>${item.description}</td>
-                <td>${item.price}</td>
-                <td>${item.category}</td>
-                <td>
-                    <button onclick="adminDashboard.editMenuItem(${item.id})">Edit</button>
-                    <button onclick="adminDashboard.deleteMenuItem(${item.id})">Delete</button>
-                </td>
-            `;
-            menuTableBody.appendChild(row);
-        });
-    };
-
-    const addMenuItem = async (menuItem) => {
-        try {
-            const response = await fetch('/api/admin/menu', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(menuItem),
-            });
-            if (response.ok) {
-                fetchMenuItems();
-            } else {
-                console.error('Failed to add menu item');
-            }
-        } catch (error) {
-            console.error('Error adding menu item:', error);
-        }
-    };
-
-    const editMenuItem = async (id) => {
-        const menuItem = prompt('Enter new menu item details (name, description, price, category) separated by commas:');
-        if (menuItem) {
-            const [name, description, price, category] = menuItem.split(',');
-            await updateMenuItem(id, { name, description, price, category });
-        }
-    };
-
-    const updateMenuItem = async (id, menuItem) => {
-        try {
-            const response = await fetch(`/api/admin/menu/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(menuItem),
-            });
-            if (response.ok) {
-                fetchMenuItems();
-            } else {
-                console.error('Failed to update menu item');
-            }
-        } catch (error) {
-            console.error('Error updating menu item:', error);
-        }
-    };
-
-    const deleteMenuItem = async (id) => {
-        if (confirm('Are you sure you want to delete this menu item?')) {
-            try {
-                const response = await fetch(`/api/admin/menu/${id}`, {
-                    method: 'DELETE',
-                });
-                if (response.ok) {
-                    fetchMenuItems();
-                } else {
-                    console.error('Failed to delete menu item');
-                }
-            } catch (error) {
-                console.error('Error deleting menu item:', error);
-            }
-        }
-    };
-
-    const fetchCustomers = async () => {
-        try {
-            const response = await fetch('/api/admin/customers');
-            const customers = await response.json();
-            renderCustomers(customers);
-        } catch (error) {
-            console.error('Error fetching customers:', error);
-        }
-    };
-
-    const renderCustomers = (customers) => {
-        customerTableBody.innerHTML = '';
-        customers.forEach(customer => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${customer.id}</td>
-                <td>${customer.name}</td>
-                <td>${customer.email}</td>
-                <td>${customer.created_at}</td>
-            `;
-            customerTableBody.appendChild(row);
-        });
-    };
-
-    return {
-        fetchMenuItems,
-        addMenuItem,
-        editMenuItem,
-        deleteMenuItem,
-        fetchCustomers,
-    };
-})();
-
-document.addEventListener('DOMContentLoaded', () => {
-    adminDashboard.fetchMenuItems();
-    adminDashboard.fetchCustomers();
+    const form = document.getElementById("add-menu-item-form");
+    form.addEventListener("submit", createProduct);
 });
+
+// ------------------ CRIAR PRODUTO ------------------
+
+async function createProduct(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const category = document.getElementById("category").value.trim();
+    const description = document.getElementById("description").value.trim();
+    const price = Number(document.getElementById("price").value);
+
+    const payload = {
+        name,
+        category,
+        description,
+        qtde_stock: 0,
+        price_purchase: price,
+        price_sale: price
+    };
+
+    try {
+        const response = await fetch(`${API}/products`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.error || "Erro ao criar produto");
+            return;
+        }
+
+        alert("Produto adicionado com sucesso!");
+        loadProducts();
+
+    } catch (err) {
+        alert("Erro ao conectar com o servidor");
+    }
+}
+
+
+// ------------------ LISTAR PRODUTOS ------------------
+
+async function loadProducts() {
+    const list = document.getElementById("menu-items");
+
+    try {
+        const response = await fetch(`${API}/products`);
+        const data = await response.json();
+
+        if (!response.ok) {
+            list.innerHTML = "<li>Erro ao carregar produtos.</li>";
+            return;
+        }
+
+        list.innerHTML = data.products
+            .map(prod => `
+                <li>
+                    ${prod.name} — R$ ${Number(prod.price_sale).toFixed(2)}
+                    (${prod.category})
+                </li>
+            `)
+            .join("");
+
+    } catch (err) {
+        list.innerHTML = "<li>Erro ao conectar com o servidor.</li>";
+    }
+}
+
+
+// ------------------ LISTAR USUÁRIOS ------------------
+
+async function loadUsers() {
+    const list = document.getElementById("customers");
+
+    try {
+        const response = await fetch(`${API}/users`);
+        const data = await response.json();
+
+        if (!response.ok) {
+            list.innerHTML = "<li>Erro ao carregar usuários.</li>";
+            return;
+        }
+
+        list.innerHTML = data.users
+            .map(u => `
+                <li>${u.name} — ${u.email} — CPF: ${u.cpf}</li>
+            `)
+            .join("");
+
+    } catch (err) {
+        list.innerHTML = "<li>Erro ao conectar com o servidor.</li>";
+    }
+}

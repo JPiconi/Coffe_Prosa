@@ -1,31 +1,33 @@
-const passwordRecoveryForm = document.getElementById('password-recovery-form');
-const emailInput = document.getElementById('email');
-const messageDiv = document.getElementById('message');
+const API = "http://localhost:8000";
 
-passwordRecoveryForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const email = emailInput.value;
+document.getElementById("password-recovery-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    fetch('/api/auth/password-recovery', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email })
-    })
-    .then(response => {
+    const email = document.getElementById("email").value.trim();
+    const msgError = document.querySelector(".msgError");
+
+    const payload = { email };
+
+    try {
+        const response = await fetch(`${API}/users/recover-password`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
         if (!response.ok) {
-            throw new Error('Password recovery failed');
+            msgError.textContent = data.error || "Erro ao enviar e-mail.";
+            msgError.style.color = "red";
+            return;
         }
-        return response.json();
-    })
-    .then(data => {
-        messageDiv.textContent = data.message || 'Check your email for recovery instructions.';
-        messageDiv.style.color = 'green';
-    })
-    .catch(error => {
-        messageDiv.textContent = error.message;
-        messageDiv.style.color = 'red';
-    });
+
+        msgError.style.color = "green";
+        msgError.textContent = "Se o e-mail existir, enviaremos um link de recuperação.";
+
+    } catch (err) {
+        msgError.textContent = "Erro ao conectar com o servidor.";
+        msgError.style.color = "red";
+    }
 });
