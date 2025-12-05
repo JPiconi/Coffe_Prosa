@@ -3,30 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
-    <title>Café&Prosa</title>
-    <link rel="stylesheet" href="/Css/style.css" />
-    <script src="../js/payment.js"></script>
+    <title>Pagamento - Café&Prosa</title>
+    <link
+      rel="shortcut icon"
+      href="/frontend/Img/Logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/frontend/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <script src="../js/onboarding.js" defer></script>
-    <script src="../js/login.js" defer></script>
-    <script src="../js/register.js" defer></script>
-    <script src="../js/password-recovery.js" defer></script>
-    <script src="../js/menu.js" defer></script>
-    <script src="../js/cart.js" defer></script>
+
     <script src="../js/payment.js" defer></script>
-    <script src="../js/customer-dashboard.js" defer></script>
-    <script src="../js/admin-dashboard.js" defer></script>
   </head>
 
   <body>
     <header>
       <a href="index.html" class="logo">
         <img
-          src="/Img/Texto do seu parágrafo (2)-Photoroom.png"
+          src="/frontend/Img/Logo_Header.png"
           alt="Logo Café&Prosa"
           class="logo"
         />
@@ -37,34 +33,36 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Cardápio</a></li>
           <li><a href="cart.html">Carrinho</a></li>
-          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
           <li><a href="payment.html" class="active">Pagamento</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="container">
-      <div>
-        <h1>Payment</h1>
+      <div class="payment-box">
+        <h1>Pagamento</h1>
+
         <form id="payment-form">
-          <div class="form-group">
-            <label for="total-price">Total Price:</label>
-            <input type="text" id="total-price" name="total-price" readonly />
-          </div>
-          <div class="form-group">
-            <label for="payment-method">Método de Pagamento:</label>
-            <select id="payment-method" name="payment-method" required>
-              <option value="">Selecione a forma de pagamento:</option>
-              <option value="credit-card">Cartão de Crédito</option>
-              <option value="bank-transfer">Cartão de Débito</option>
-              <option value="paypal">Pix</option>
-            </select>
-          </div>
-          <button type="submit">Pagar</button>
+          <label for="total-price">Total:</label>
+          <input type="text" id="total-price" readonly />
+
+          <label for="payment-method">Forma de Pagamento:</label>
+          <select id="payment-method" required>
+            <option value="">Selecione...</option>
+            <option value="credit-card">Cartão de Crédito</option>
+            <option value="debit-card">Cartão de Débito</option>
+            <option value="pix">Pix</option>
+          </select>
+
+          <button type="submit" class="button-primary">
+            Confirmar Pagamento
+          </button>
         </form>
+
         <div id="payment-message"></div>
       </div>
     </main>
+
     <footer>
       <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
       <nav>

@@ -3,30 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
-    <title>Café&Prosa</title>
-    <link rel="stylesheet" href="/Css/style.css" />
+    <link rel="stylesheet" href="/frontend/Img/Logo.png" type="image/x-icon" />
+    <title>Carrinho - Café&Prosa</title>
+    <link rel="stylesheet" href="/frontend/css/style.css" />
     <script src="../js/cart.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <script src="../js/onboarding.js" defer></script>
-    <script src="../js/login.js" defer></script>
-    <script src="../js/register.js" defer></script>
-    <script src="../js/password-recovery.js" defer></script>
-    <script src="../js/menu.js" defer></script>
-    <script src="../js/cart.js" defer></script>
-    <script src="../js/payment.js" defer></script>
-    <script src="../js/customer-dashboard.js" defer></script>
-    <script src="../js/admin-dashboard.js" defer></script>
   </head>
 
   <body>
     <header>
       <a href="index.html" class="logo">
         <img
-          src="/Img/Texto do seu parágrafo (2)-Photoroom.png"
+          src="/frontend/Img/Logo_Header.png"
           alt="Logo Café&Prosa"
           class="logo"
         />
@@ -37,19 +24,21 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Cardápio</a></li>
           <li><a href="cart.html" class="active">Carrinho</a></li>
-          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
           <li><a href="payment.html">Pagamento</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <h2>Seu Carrinho!</h2>
+      <h2>Seu Carrinho</h2>
+
       <div id="cart-items"></div>
+
       <div id="cart-summary">
-        <h3>Sumário do Carrinho</h3>
-        <p>Total: <span id="total-price">$0.00</span></p>
-        <button><a href="/frontend/public/payment.html">Pagar! </a></button>
+        <h3>Resumo</h3>
+        <p>Total: <span id="cart-total">R$ 0,00</span></p>
+
+        <a href="payment.html" class="button-primary">Ir para o Pagamento</a>
       </div>
     </main>
 

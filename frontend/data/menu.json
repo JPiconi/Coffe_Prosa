@@ -1,0 +1,208 @@
+[
+  {
+    "id": 1,
+    "category": "cafes-gelados",
+    "name": "Iced Americano 450ml",
+    "description": "Americano gelado, espresso com água e gelo.",
+    "price": 10.0,
+    "vegan": true,
+    "veganPrice": 11.0,
+    "image": "https://cloudassets.starbucks.com/is/image/sbuxcorp/IcedCaffeAmericano"
+  },
+  {
+    "id": 2,
+    "category": "cafes-gelados",
+    "name": "Iced Latte 450ml (baunilha)",
+    "description": "Latte gelado com opção de sabor: baunilha, caramelo ou avelã.",
+    "price": 13.5,
+    "vegan": true,
+    "veganPrice": 15.0,
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/iced-latte-30188f7.jpg"
+  },
+  {
+    "id": 3,
+    "category": "cafes-gelados",
+    "name": "Cold Brew 450ml",
+    "description": "Café coado a frio, suave e encorpado.",
+    "price": 12.0,
+    "vegan": true,
+    "veganPrice": 13.2,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDsmbiq4BN7CBpk3adlyDFHuJkJBsXHgQ_MBT5deNl3j_phkxzAZdjI124Fh5wok8nFcU"
+  },
+  {
+    "id": 4,
+    "category": "cafes-gelados",
+    "name": "Espresso Tonic 350ml",
+    "description": "Espresso sobre água tônica com gelo.",
+    "price": 15.0,
+    "vegan": true,
+    "veganPrice": 16.5,
+    "image": "https://res.cloudinary.com/htt8g4cd/image/upload/wp/espresso_tonic"
+  },
+  {
+    "id": 5,
+    "category": "cafes-gelados",
+    "name": "Affogato Gelado 450ml",
+    "description": "Espresso servido sobre sorvete (opção vegana disponível).",
+    "price": 20.0,
+    "vegan": false,
+    "veganPrice": 22.0,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Affogato_al_Caffe.jpg"
+  },
+
+  {
+    "id": 10,
+    "category": "frappes-milkshakes",
+    "name": "Frappé de Café com Chantilly 500ml",
+    "description": "Frappé gelado com finalização de chantilly.",
+    "price": 18.0,
+    "vegan": true,
+    "veganPrice": 19.8,
+    "image": "https://saboreiaavida.nestle.pt/sites/default/files/Cafe_Frappe.png"
+  },
+  {
+    "id": 11,
+    "category": "frappes-milkshakes",
+    "name": "Frappé de Doce de Leite 500ml",
+    "description": "Frappé cremoso de doce de leite.",
+    "price": 18.0,
+    "vegan": true,
+    "veganPrice": 19.8,
+    "image": "https://images.mrcook.app/recipe-image/frappe-doce-de-leite.jpg"
+  },
+  {
+    "id": 12,
+    "category": "frappes-milkshakes",
+    "name": "Milk Shake de Cappuccino 500ml",
+    "description": "Milkshake de cappuccino cremoso.",
+    "price": 16.0,
+    "vegan": true,
+    "veganPrice": 17.7,
+    "image": "https://www.receitasnestle.com.br/sites/default/files/milkshake_cappuccino.jpg"
+  },
+
+  {
+    "id": 20,
+    "category": "chas-gelados-matchas",
+    "name": "Chá Verde com Limão e Mel 250ml",
+    "description": "Chá verde refrescante com limão e toque de mel.",
+    "price": 11.5,
+    "vegan": false,
+    "veganPrice": 12.75,
+    "image": "https://i.ytimg.com/vi/XVyEBQu6mHc/sddefault.jpg"
+  },
+  {
+    "id": 21,
+    "category": "chas-gelados-matchas",
+    "name": "Chá de Hibisco com Frutas Vermelhas 250ml",
+    "description": "Chá de hibisco com infusionamento de frutas vermelhas.",
+    "price": 13.5,
+    "vegan": true,
+    "image": "https://blog.sanavita.com.br/wp-content/uploads/2013/11/Cha-de-hibisco.jpg"
+  },
+  {
+    "id": 22,
+    "category": "chas-gelados-matchas",
+    "name": "Matcha Gelado com Leite de Coco 250ml",
+    "description": "Matcha latte frio com leite de coco.",
+    "price": 15.0,
+    "vegan": true,
+    "veganPrice": 16.5,
+    "image": "https://conteudo.imguol.com.br/c/entretenimento/matcha-latte.jpg"
+  },
+
+  {
+    "id": 30,
+    "category": "bebidas-cremosas",
+    "name": "Smoothie de Morango com Banana 500ml",
+    "description": "Smoothie natural com morango e banana.",
+    "price": 14.0,
+    "vegan": true,
+    "veganPrice": 15.4,
+    "image": "https://d21wiczbqxib04.cloudfront.net/shake-morango.jpg"
+  },
+  {
+    "id": 31,
+    "category": "bebidas-cremosas",
+    "name": "Cacau Gelado com Leite de Aveia 350ml",
+    "description": "Cacau gelado cremoso com leite de aveia.",
+    "price": 15.0,
+    "vegan": true,
+    "veganPrice": 16.5,
+    "image": "https://static.itdg.com.br/images/cacau-leite-aveia.jpg"
+  },
+
+  {
+    "id": 40,
+    "category": "drinks-autoriais",
+    "name": "Cold Mocha Citrus 250ml",
+    "description": "Mocha gelado com toque cítrico.",
+    "price": 22.0,
+    "vegan": true,
+    "veganPrice": 24.2,
+    "image": "https://www.crosstown.co.uk/wp-content/uploads/2024/07/iced-chocolate.webp"
+  },
+
+  {
+    "id": 50,
+    "category": "bebidas-quentes",
+    "name": "Cappuccino 250ml",
+    "description": "Cappuccino cremoso com espuma de leite.",
+    "price": 13.0,
+    "vegan": true,
+    "veganPrice": 14.3,
+    "image": "https://example.com/cappuccino.jpg"
+  },
+  {
+    "id": 51,
+    "category": "bebidas-quentes",
+    "name": "Espresso 180ml",
+    "description": "Dose de espresso forte.",
+    "price": 8.0,
+    "vegan": true,
+    "image": "https://example.com/espresso.jpg"
+  },
+
+  {
+    "id": 60,
+    "category": "comidas",
+    "name": "Brownie Tradicional 200g",
+    "description": "Brownie macio com cobertura de chocolate.",
+    "price": 12.5,
+    "vegan": true,
+    "veganPrice": 14.0,
+    "image": "https://example.com/brownie.jpg"
+  },
+  {
+    "id": 61,
+    "category": "comidas",
+    "name": "Bolo de Cenoura (pedaço 250g)",
+    "description": "Bolo caseiro de cenoura com cobertura.",
+    "price": 12.0,
+    "vegan": false,
+    "veganPrice": 17.0,
+    "image": "https://example.com/bolo-cenoura.jpg"
+  },
+
+  {
+    "id": 70,
+    "category": "salgados",
+    "name": "Coxinha (Frango com Catupiry) Unidade",
+    "description": "Coxinha tradicional recheada.",
+    "price": 6.0,
+    "vegan": false,
+    "veganPrice": 7.5,
+    "image": "https://example.com/coxinha.jpg"
+  },
+
+  {
+    "id": 80,
+    "category": "pratos-lanches",
+    "name": "Sanduíche de Pão Ciabatta com Frango e Maionese",
+    "description": "Ciabatta recheado com frango desfiado e maionese.",
+    "price": 16.2,
+    "vegan": false,
+    "veganPrice": 20.0,
+    "image": "https://example.com/sanduiche-ciabatta.jpg"
+  }
+]

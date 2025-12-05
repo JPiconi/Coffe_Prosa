@@ -1,0 +1,202 @@
+/* ==============================
+   VARIÁVEIS DE CORES
+============================== */
+:root {
+  --marrom-escuro: #4e2e1e;
+  --marrom-medio: #7c4f2c;
+  --marrom-claro: #bfa07a;
+
+  --Bege: #e4dbca;
+
+  --Cream: #f3e9dc;
+  --Caramel: #c08552;
+  --Brownie: #5e3023;
+  --Coffee: #895737;
+}
+
+/* ==============================
+   RESET BÁSICO
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ==============================
+   BASE DO SITE
+============================== */
+html,
+body {
+  height: 100vh;
+  overflow: hidden; /* remove scroll */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: var(--marrom-escuro);
+  line-height: 1.6;
+
+  /* FUNDO AJUSTADO (MENOR) */
+  background-color: #af8d71;
+  background-image: url("/frontend/Img/image.png");
+  background-size: cover; /* <-- diminui */
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+header {
+  background-color: var(--Bege);
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+
+.logo {
+  height: 100px;
+}
+
+/* ==============================
+   NAVEGAÇÃO
+============================== */
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 40px;
+}
+
+nav ul li a {
+  color: var(--Brownie);
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: var(--marrom-claro);
+}
+
+nav ul li a.active {
+  color: var(--Cream);
+  background-color: var(--Brownie);
+}
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+============================== */
+main {
+  
+  flex: 1;
+  overflow: hidden; 
+}
+
+/* Seção SOBRE */
+.Sobre {
+  width: 800px;
+  margin: 90px;
+  margin-top: 90px;
+  padding: 30px;
+  color: white;
+ 
+}
+
+.Sobre h2 {
+  font-size: 60px;
+  text-shadow: 2px 2px 10px rgba(117, 117, 117, 0.7);
+  margin-bottom: 1rem;
+}
+
+.Sobre p {
+  margin-bottom: 1.5rem;
+  text-shadow: 20px 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* Botões */
+.btn-cardapio,
+.btn-cardapio2 {
+  font-size: medium;
+  height: 35px;
+  width: 100px;
+  border-radius: 20px;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-cardapio {
+  background-color: var(--Cream);
+  color: var(--marrom-escuro);
+}
+
+.btn-cardapio2 {
+  background-color: var(--Brownie);
+  color: var(--Cream);
+  margin-left: 1rem;
+}
+
+/* Títulos e textos de seções */
+section h2 {
+  color: var(--marrom-escuro);
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  color: #3a2a21;
+  font-size: 1rem;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+footer {
+  background-color: var(--marrom-escuro);
+  color: var(--Cream);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer nav a {
+  color: var(--Caramel);
+  margin: 0.1rem;
+  transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+  color: var(--Cream);
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+@media (max-width: 768px) {
+  .Sobre {
+    width: 100%;
+    padding: 40px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  header {
+    gap: 30px;
+  }
+
+  nav ul {
+    margin-top: 20px;
+    gap: 1rem;
+  }
+}

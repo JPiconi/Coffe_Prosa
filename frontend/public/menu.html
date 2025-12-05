@@ -1,179 +1,995 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/Img/Logo.png" type="image/x-icon" />
-    <title>Café&Prosa</title>
-    <link rel="stylesheet" href="/Css/Menu.css" />
-    <script src="../js/menu.js" defer></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <script src="../js/onboarding.js" defer></script>
-    <script src="../js/login.js" defer></script>
-    <script src="../js/register.js" defer></script>
-    <script src="../js/password-recovery.js" defer></script>
-    <script src="../js/menu.js" defer></script>
-    <script src="../js/cart.js" defer></script>
-    <script src="../js/payment.js" defer></script>
-    <script src="../js/customer-dashboard.js" defer></script>
-    <script src="../js/admin-dashboard.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <a href="index.html" class="logo">
-        <img
-          src="/Img/Texto do seu parágrafo (2)-Photoroom.png"
-          alt="Logo Café&Prosa"
-          class="logo"
-        />
-      </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/frontend/Img/Logo.png" type="image/x-icon" />
+  <title>Café&Prosa</title>
+  <link rel="stylesheet" href="/frontend/css/Menu.css" />
+  <script src="../js/menu.js" defer></script>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html" class="active">Cardápio</a></li>
-          <li><a href="cart.html">Carrinho</a></li>
-          <!-- <li><a href="customer-dashboard.html">Painel do Cliente</a></li> -->
-          <li><a href="payment.html">Pagamento</a></li>
-        </ul>
-      </nav>
-    </header>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
 
-    <main>
-      <div class="menu-container">
-        <div class="menu-nav">
-          <button data-target="mais-vendidos">Mais vendidos</button>
-          <button data-target="cafes-quentes">Cafés quentes</button>
-          <button data-target="cafes-gelados">Cafés gelados</button>
-          <button data-target="salgados">Salgados</button>
-        </div>
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <img src="/frontend/Img/Logo_Header.png" alt="Logo Café&Prosa" class="logo" />
+    </a>
 
-        <div class="menu-section" id="mais-vendidos">
-          <h2>Mais Vendidos</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <a href="/Expresso_Classico.html">
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                  alt="Espresso"
-                  class="oi"
-              /></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Cardápio</a></li>
+        <li><a href="cart.html">Carrinho</a></li>
+        <li><a href="payment.html">Pagamento</a></li>
+      </ul>
+    </nav>
+  </header>
 
-              <h3>Espresso Clássico</h3>
-              <p>R$ 7,00</p>
-            </div>
-            <div class="menu-item">
-              <a href="/Expresso_Classico.html">
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                  alt="Espresso"
-                  class="oi"
-              /></a>
+  <main>
 
-              <h3>Espresso Clássico</h3>
-              <p>R$ 7,00</p>
-            </div>
-            <div class="menu-item">
-              <a href="/Expresso_Classico.html">
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                  alt="Espresso"
-                  class="oi"
-              /></a>
 
-              <h3>Espresso Clássico</h3>
-              <p>R$ 7,00</p>
-            </div>
 
-            <div class="menu-item">
-              <img
-                src=" https://png.pngtree.com/png-clipart/20250417/original/pngtree-a-creamy-cup-of-cappuccino-topped-with-frothy-milk-and-cocoa-png-image_20847621.png"
-                alt="Cappuccino"
-              />
-              <h3>Cappuccino Cremoso</h3>
-              <p>R$ 10,00</p>
+    <div class="menu-container">
+
+      <!-- ÁREA DE PESQUISA -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar produtos..." />
+      </div>
+      <!-- NAV DAS CATEGORIAS -->
+      <div class="menu-nav">
+        <button data-target="cafes-gelados">CAFÉS GELADOS</button>
+        <button data-target="frappes-milkshakes">FRAPPÉS & MILKSHAKES</button>
+        <button data-target="chas-gelados-matchas">CHÁS GELADOS & MATCHAS</button>
+        <button data-target="bebidas-cremosas">BEBIDAS CREMOSAS (Sem Café)</button>
+        <button data-target="drinks-autoriais">DRINKS AUTORAIS</button>
+        <button data-target="bebidas-quentes">BEBIDAS QUENTES</button>
+        <button data-target="comidas">COMIDAS</button>
+        <button data-target="salgados">SALGADOS</button>
+        <button data-target="pratos-lanches">PRATOS & LANCHES</button>
+      </div>
+
+      <!-- =======================
+              1. CAFÉS GELADOS
+        ========================= -->
+      <div class="menu-section" id="cafes-gelados">
+        <h2>CAFÉS GELADOS</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="../Img/CAFÉS GELADOS/Iced Americano.jpg" alt="">
+            <h3>Iced Americano 450ml</h3>
+            <p>R$ 10,00 / Vegano R$ 11,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
             </div>
           </div>
-        </div>
 
-        <div class="menu-section" id="cafes-quentes">
-          <h2>Cafés Quentes</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/023/742/327/small_2x/latte-coffee-isolated-illustration-ai-generative-free-png.png"
-                alt="Latte"
-              />
-              <h3>Café Latte</h3>
-              <p>R$ 9,00</p>
-            </div>
-            <div class="menu-item">
-              <img
-                src="https://www.nescafe.com/br/sites/default/files/2023-08/Nes_Web3_Article_Header_Mocha_1448x1240.png"
-                alt="Mocha"
-              />
-              <h3>Mocha Chocolate</h3>
-              <p>R$ 11,00</p>
+          <div class="menu-item">
+            <img src="../Img/CAFÉS GELADOS/Iced Latte .webp" alt="">
+            <h3>Iced Latte (caramelo) 450ml</h3>
+            <p>R$ 13,50 / Vegano R$ 15,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
             </div>
           </div>
-        </div>
 
-        <div class="menu-section" id="cafes-gelados">
-          <h2>Cafés Gelados</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <img
-                src="/Img/Café_Gelado_02.png"
-                alt="Iced Latte"
-                style="height: 200px"
-              />
-              <h3>Iced Latte</h3>
-              <p>R$ 12,00</p>
-            </div>
-            <div class="menu-item">
-              <img
-                src="https://png.pngtree.com/png-vector/20241225/ourmid/pngtree-3d-frappuccino-with-whipped-cream-and-chocolate-png-image_14852301.png"
-                alt="Frappuccino"
-                style="height: 200px"
-              />
-              <h3>Frappuccino</h3>
-              <p>R$ 13,00</p>
+          <div class="menu-item">
+            <img src="../Img/CAFÉS GELADOS/Cold Brew.webp" alt="">
+            <h3>Cold Brew 450ml</h3>
+            <p>R$ 12,00 / Vegano R$ 13,20</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
             </div>
           </div>
-        </div>
 
-        <div class="menu-section" id="salgados">
-          <h2>Salgados</h2>
-          <div class="menu-items">
-            <div class="menu-item">
-              <img
-                src="https://png.pngtree.com/png-clipart/20240327/original/pngtree-cheese-bread-brazilian-snack-pao-de-queijo-png-image_14691916.png"
-                alt="Pão de Queijo"
-              />
-              <h3>Pão de Queijo</h3>
-              <p>R$ 5,00</p>
-            </div>
-            <div class="menu-item">
-              <img src="/Img/Salgado_01.png" alt="Torta" />
-              <h3>Torta de Frango</h3>
-              <p>R$ 8,00</p>
+          <div class="menu-item">
+            <img src="../Img/CAFÉS GELADOS/Espresso Tonic.webp" alt="">
+            <h3>Espresso Tonic 350ml</h3>
+            <p>R$ 15,00 / Vegano R$ 16,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
             </div>
           </div>
+
+          <div class="menu-item">
+            <img src="../Img/CAFÉS GELADOS/Affogato Gelado.webp" alt="">
+            <h3>Affogato Gelado 450ml</h3>
+            <p>R$ 20,00 / Vegano R$ 22,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
         </div>
       </div>
-    </main>
 
-    <footer>
-      <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
-      <nav>
-        <a href="about.html">Sobre Nós</a> |
-        <a href="contact.html">Contato</a> |
-        <a href="privacy.html">Política de Privacidade</a>
-      </nav>
-    </footer>
-  </body>
+      <!-- =======================
+              2. FRAPPÉS & MILKSHAKES
+        ========================= -->
+      <div class="menu-section" id="frappes-milkshakes">
+        <h2>FRAPPÉS & MILKSHAKES</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="../Img/FRAPPÉS & MILKSHAKES/Frappé de Café com Chantilly.webp" alt="">
+            <h3>Frappé de Café com Chantilly 500ml</h3>
+            <p>R$ 18,00 / Vegano R$ 19,80</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/FRAPPÉS & MILKSHAKES/Frappé de Doce de Leite.webp" alt="">
+            <h3>Frappé de Doce de Leite 500ml</h3>
+            <p>R$ 18,00 / Vegano R$ 19,80</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/FRAPPÉS & MILKSHAKES/Milk Shake de Cappuccino.png" alt="">
+            <h3>Milk Shake de Cappuccino 500ml</h3>
+            <p>R$ 16,00 / Vegano R$ 17,70</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/FRAPPÉS & MILKSHAKES/Mocha Gelado.webp" alt="">
+            <h3>Mocha Gelado 250ml</h3>
+            <p>R$ 20,00 / Vegano R$ 22,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             3. CHÁS GELADOS & MATCHAS
+        ========================= -->
+      <div class="menu-section" id="chas-gelados-matchas">
+        <h2>CHÁS GELADOS & MATCHAS</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="../Img/CHÁS GELADOS & MATCHAS/Chá Verde com Limão.jpg" alt="">
+            <h3>Chá Verde com Limão e Mel 250ml</h3>
+            <p>R$ 11,50 / Vegano R$ 12,75</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/CHÁS GELADOS & MATCHAS/Chá de Hibisco com Frutas Vermelhas.png" alt="">
+            <h3>Chá de Hibisco com Frutas Vermelhas 250ml</h3>
+            <p>R$ 13,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/CHÁS GELADOS & MATCHAS/Chá Preto.png" alt="">
+            <h3>Chá Preto com Maracujá 250ml</h3>
+            <p>R$ 13,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/CHÁS GELADOS & MATCHAS/Matcha Gelado com Leite.png" alt="">
+            <h3>Matcha Gelado com Leite de Coco 250ml</h3>
+            <p>R$ 15,00 / Vegano R$ 16,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             4. BEBIDAS CREMOSAS (Sem Café)
+        ========================= -->
+      <div class="menu-section" id="bebidas-cremosas">
+        <h2>BEBIDAS CREMOSAS (Sem Café)</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS CREMOSAS (Sem Café)/Smoothie de Morango com Banana.png" alt="">
+            <h3>Smoothie de Morango com Banana 500ml</h3>
+            <p>R$ 14,00 / Vegano R$ 15,40</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS CREMOSAS (Sem Café)/Smoothie de Manga com Gengibre.png" alt="">
+            <h3>Smoothie de Manga com Gengibre 500ml</h3>
+            <p>R$ 14,00 / Vegano R$ 15,40</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS CREMOSAS (Sem Café)/Leite com Baunilha e Canela Gelado.png" alt="">
+            <h3>Leite com Baunilha e Canela Gelado 300ml</h3>
+            <p>R$ 13,00 / Vegano R$ 14,30</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS CREMOSAS (Sem Café)/Cacau Gelado com Leite de Aveia.webp" alt="">
+            <h3>Cacau Gelado com Leite de Aveia 350ml</h3>
+            <p>R$ 15,00 / Vegano R$ 16,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             5. DRINKS AUTORAIS
+        ========================= -->
+      <div class="menu-section" id="drinks-autoriais">
+        <h2>DRINKS AUTORAIS</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="../Img/DRINKS AUTORAIS/Cold Mocha Citrus.webp" alt="">
+            <h3>Cold Mocha Citrus 250ml</h3>
+            <p>R$ 22,00 / Vegano R$ 24,20</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/DRINKS AUTORAIS/Latte Tropical.avif" alt="">
+            <h3>Latte Tropical 300ml</h3>
+            <p>R$ 23,00 / Vegano R$ 25,30</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/DRINKS AUTORAIS/Espresso Mint Cooler.png" alt="">
+            <h3>Espresso Mint Cooler 250ml</h3>
+            <p>R$ 20,00 / Vegano R$ 22,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/DRINKS AUTORAIS/Choco Pimenta Gelado.png" alt="">
+            <h3>Choco Pimenta Gelado 400ml</h3>
+            <p>R$ 21,00 / Vegano R$ 23,10</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             6. BEBIDAS QUENTES
+        ========================= -->
+      <div class="menu-section" id="bebidas-quentes">
+        <h2>BEBIDAS QUENTES</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+              <img src="../Img/BEBIDAS QUENTES/Chocolate Quente Proteico.png" alt="">
+            <h3>Chocolate Quente Proteico 300ml</h3>
+            <p>R$ 17,00 / Vegano R$ 18,70</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Café Proteico Cremoso.webp" alt="">
+            <h3>Café Proteico Cremoso 350ml</h3>
+            <p>R$ 16,00 / Vegano R$ 17,60</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Latte Proteico de Batata-doce e Canela.png" alt="">
+            <h3>Latte Proteico de Batata-doce e Canela 350ml</h3>
+            <p>R$ 15,00 / Vegano R$ 16,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Cappuccino.webp" alt="">
+            <h3>Cappuccino 250ml</h3>
+            <p>R$ 13,00 / Vegano R$ 14,30</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Chocolate Quente.png" alt="">
+            <h3>Chocolate Quente 300ml</h3>
+            <p>R$ 12,00 / Vegano R$ 13,20</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Pingado.png" alt="">
+            <h3>Pingado 190ml</h3>
+            <p>R$ 9,50 / Vegano R$ 10,45</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Café.webp" alt="">
+            <h3>Café 240ml (coado ou filtrado)</h3>
+            <p>R$ 8,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Mocha.png" alt="">
+            <h3>Mocha 240ml</h3>
+            <p>R$ 16,00 / Vegano R$ 17,60</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Espresso.avif" alt="">
+            <h3>Espresso 180ml</h3>
+            <p>R$ 8,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/MACCHIATTOALLATTE.avif" alt="">
+            <h3>Macchiato 200ml</h3>
+            <p>R$ 9,00 / Vegano R$ 9,90</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/chá preto.png" alt="">
+            <h3>Chá Preto 240ml</h3>
+            <p>R$ 10,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Chá de Hibisco com Frutas Vermelhas.png" alt="">
+            <h3>Chá de Hibisco 240ml</h3>
+            <p>R$ 10,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="../Img/BEBIDAS QUENTES/Chá Verde com Limão.jpg" alt="">
+            <h3>Chá Verde 240ml</h3>
+            <p>R$ 10,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/cha-mate.jpg" alt="">
+            <h3>Chá Mate 240ml</h3>
+            <p>R$ 9,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Affogato_al_Caffe.jpg" alt="">
+            <h3>Affogato 240ml</h3>
+            <p>R$ 20,00 / Vegano R$ 22,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/matcha.jpg" alt="">
+            <h3>Chá Matcha 240ml</h3>
+            <p>R$ 13,00 / Vegano R$ 14,30</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             7. COMIDAS (Doces, Bolos e Afins)
+        ========================= -->
+      <div class="menu-section" id="comidas">
+        <h2>COMIDAS</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="https://example.com/brownie.jpg" alt="">
+            <h3>Brownie Tradicional 200g</h3>
+            <p>R$ 12,50 / Vegano R$ 14,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/croissant.jpg" alt="">
+            <h3>Croissant Unidade</h3>
+            <p>R$ 10,00 / Vegano R$ 12,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/cookie-chocolate.jpg" alt="">
+            <h3>Cookies de Chocolate Unidade</h3>
+            <p>R$ 12,50 / Vegano R$ 14,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/muffin-blueberry.jpg" alt="">
+            <h3>Muffin de Blueberry Unidade</h3>
+            <p>R$ 12,50 / Vegano R$ 14,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/pao-queijo.jpg" alt="">
+            <h3>Pão de Queijo Unidade</h3>
+            <p>R$ 4,00 / Vegano R$ 5,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/torta-limao.jpg" alt="">
+            <h3>Torta de Limão Fatia</h3>
+            <p>R$ 10,00 / Vegano R$ 12,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/quiche.jpg" alt="">
+            <h3>Quiche de Alho-Poró Fatia</h3>
+            <p>R$ 12,00 / Vegano R$ 14,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/panquecas.jpg" alt="">
+            <h3>Panquecas Americanas (4 unid)</h3>
+            <p>R$ 10,00 / Vegano R$ 12,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/sanduiche-ciabatta.jpg" alt="">
+            <h3>Sanduíche de Pão Ciabatta com Frango e Maionese</h3>
+            <p>R$ 16,20 / Vegano R$ 20,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/salada-caprese.jpg" alt="">
+            <h3>Salada Caprese</h3>
+            <p>R$ 15,00 / Vegano R$ 17,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/bolo-cenoura.jpg" alt="">
+            <h3>Bolo de Cenoura com Cobertura de Chocolate (pedaço 250g)</h3>
+            <p>R$ 12,00 / Vegano R$ 17,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/torrada-abacate.jpg" alt="">
+            <h3>Torrada com Abacate e Tomate</h3>
+            <p>R$ 13,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/wrap-frango.jpg" alt="">
+            <h3>Wrap de Frango com Salada</h3>
+            <p>R$ 14,50 / Vegano R$ 16,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/cookies-aveia.jpg" alt="">
+            <h3>Cookies de Aveia com Passas (3 unid de 50g)</h3>
+            <p>R$ 12,50 / Vegano R$ 14,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/pao-mel.jpg" alt="">
+            <h3>Pão de Mel Unidade 100g</h3>
+            <p>R$ 8,00 / Vegano R$ 9,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/empadinha-palmito.jpg" alt="">
+            <h3>Empadinha de Palmito Unidade 100g</h3>
+            <p>R$ 7,00 / Vegano R$ 8,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/bolo-fuba.jpg" alt="">
+            <h3>Bolo de Fubá Pedaço 120g</h3>
+            <p>R$ 10,00 / Vegano R$ 12,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             8. SALGADOS
+        ========================= -->
+      <div class="menu-section" id="salgados">
+        <h2>SALGADOS</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="https://example.com/coxinha.jpg" alt="">
+            <h3>Coxinha (Frango com Catupiry) 400g</h3>
+            <p>R$ 6,00 / Vegano R$ 7,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/coxinha-jaca.jpg" alt="">
+            <h3>Coxinha Vegana (Jaca Verde ou versão)</h3>
+            <p>R$ 7,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/pao-queijo.jpg" alt="">
+            <h3>Pão de Queijo Unidade</h3>
+            <p>R$ 4,00 / Vegano R$ 5,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/croissant-salgado.jpg" alt="">
+            <h3>Croissant Unidade</h3>
+            <p>R$ 10,00 / Vegano R$ 12,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/empadinha.jpg" alt="">
+            <h3>Empadinha de Palmito Unidade 100g</h3>
+            <p>R$ 7,00 / Vegano R$ 8,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================
+             9. PRATOS & LANCHES
+        ========================= -->
+      <div class="menu-section" id="pratos-lanches">
+        <h2>PRATOS & LANCHES</h2>
+        <div class="menu-items">
+
+          <div class="menu-item">
+            <img src="https://example.com/sanduiche-ciabatta.jpg" alt="">
+            <h3>Sanduíche de Pão Ciabatta com Frango e Maionese</h3>
+            <p>R$ 16,20 / Vegano R$ 20,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/salada-caprese.jpg" alt="">
+            <h3>Salada Caprese</h3>
+            <p>R$ 15,00 / Vegano R$ 17,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/torrada-abacate.jpg" alt="">
+            <h3>Torrada com Abacate e Tomate</h3>
+            <p>R$ 13,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/wrap-frango.jpg" alt="">
+            <h3>Wrap de Frango com Salada</h3>
+            <p>R$ 14,50 / Vegano R$ 16,50</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <img src="https://example.com/panquecas.jpg" alt="">
+            <h3>Panquecas Americanas (4 unid)</h3>
+            <p>R$ 10,00 / Vegano R$ 12,00</p>
+
+            <div class="add-cart">
+              <button class="btn-minus" aria-label="Diminuir">−</button>
+              <span class="item-count" aria-live="polite">0</span>
+              <button class="btn-plus" aria-label="Aumentar">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Café&Prosa. Todos os direitos reservados.</p>
+    <nav>
+      <a href="about.html">Sobre Nós</a> |
+      <a href="contact.html">Contato</a> |
+      <a href="privacy.html">Política de Privacidade</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Script leve para scrollear para seção ao clicar no nav (funciona sem seu menu.js)
+    document.querySelectorAll('.menu-nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-target');
+        const sec = document.getElementById(id);
+        if (sec) {
+          sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Script do contador - seguro contra elementos faltantes
+    (function () {
+      const items = document.querySelectorAll('.menu-item');
+      items.forEach(item => {
+        const plus = item.querySelector('.btn-plus');
+        const minus = item.querySelector('.btn-minus');
+        const countEl = item.querySelector('.item-count');
+
+        if (!plus || !minus || !countEl) return;
+
+        let count = parseInt(countEl.textContent, 10) || 0;
+
+        plus.addEventListener('click', () => {
+          count = count + 1;
+          countEl.textContent = count;
+        });
+
+        minus.addEventListener('click', () => {
+          if (count > 0) {
+            count = count - 1;
+            countEl.textContent = count;
+          }
+        });
+      });
+    })();
+
+
+
+
+
+
+
+
+
+
+
+    // FILTRAR PRODUTOS
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function () {
+      const term = searchInput.value.toLowerCase();
+      const items = document.querySelectorAll(".menu-item");
+
+      items.forEach(item => {
+        const title = item.querySelector("h3").textContent.toLowerCase();
+
+        if (title.includes(term)) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+
+  </script>
+</body>
+
 </html>
