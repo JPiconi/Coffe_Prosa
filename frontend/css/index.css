@@ -32,7 +32,8 @@
 html,
 body {
   height: 100vh;
-  overflow: hidden; /* remove scroll */
+  overflow: hidden;
+  /* remove scroll */
 }
 
 body {
@@ -44,7 +45,8 @@ body {
   /* FUNDO AJUSTADO (MENOR) */
   background-color: #af8d71;
   background-image: url("/frontend/Img/image.png");
-  background-size: cover; /* <-- diminui */
+  background-size: cover;
+  /* <-- diminui */
   background-repeat: no-repeat;
   background-position: top;
 }
@@ -98,9 +100,9 @@ nav ul li a.active {
    CONTEÚDO PRINCIPAL
 ============================== */
 main {
-  
+
   flex: 1;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* Seção SOBRE */
@@ -110,7 +112,7 @@ main {
   margin-top: 90px;
   padding: 30px;
   color: white;
- 
+
 }
 
 .Sobre h2 {
